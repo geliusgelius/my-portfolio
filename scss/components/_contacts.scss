@@ -41,109 +41,12 @@
     gap: 30px;
     max-width: 800px;
     margin: 0 auto;
+    perspective: 1000px;
   }
 
   &__item {
     width: 160px;
     transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateY(-10px);
-    }
-  }
-
-  &__link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-  }
-
-  &__icon-wrapper {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(white, 0.1);
-      z-index: 1;
-    }
-
-    i {
-      font-size: 2rem;
-      z-index: 2;
-    }
-  }
-
-  &__label {
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  // Индивидуальные цвета для иконок
-  &__item:hover &__icon-wrapper {
-    &::before {
-      background: transparent;
-    }
-
-    i {
-      color: white;
-    }
-  }
-
-  &__item:nth-child(1) &__icon-wrapper {
-    background: linear-gradient(135deg, #0088cc, #00a8ff); // Telegram
-  }
-
-  &__item:nth-child(2) &__icon-wrapper {
-    background: linear-gradient(135deg, #0077b5, #00a0dc); // LinkedIn
-  }
-
-  &__item:nth-child(3) &__icon-wrapper {
-    background: linear-gradient(135deg, #e4405f, #fd1d1d); // Instagram
-  }
-
-  &__item:nth-child(4) &__icon-wrapper {
-    background: linear-gradient(135deg, #333, #6e5494); // GitHub
-  }
-
-  &__item:hover &__label {
-    color: $primary;
-  }
-
-  &__email {
-    margin-top: 50px;
-    font-size: 1.2rem;
-
-    a {
-      color: $primary;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-
-      &:hover {
-        color: white;
-        text-shadow: 0 0 10px rgba($primary, 0.7);
-      }
-    }
-  }
-
-  .contacts__item {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -162,32 +65,223 @@
     }
   }
 
-  .contacts__items--animated .contacts__item {
+  &__items--animated .contacts__item {
     opacity: 1;
     transform: translateY(0);
   }
 
-  .contacts__online-dot {
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+  }
+
+  &__icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transform: perspective(500px) rotateY(0) rotateX(0);
+    animation: float 4s ease-in-out infinite;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(white, 0.1);
+      z-index: 1;
+      transition: all 0.6s ease;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 10%;
+      width: 80%;
+      height: 20%;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(255, 255, 255, 0) 80%
+      );
+      border-radius: 50%;
+      transform: rotateX(75deg) translateZ(-10px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      filter: blur(2px);
+    }
+
+    i {
+      font-size: 2rem;
+      z-index: 2;
+      transition: transform 0.3s ease;
+      animation: pulse 2s ease infinite;
+    }
+  }
+
+  &__item:hover .contacts__icon-wrapper {
+    transform: perspective(500px) rotateY(20deg) rotateX(10deg) scale(1.1);
+
+    &::before {
+      background: transparent;
+    }
+
+    &::after {
+      opacity: 0.6;
+    }
+
+    i {
+      transform: scale(0.9);
+      color: white;
+    }
+  }
+
+  // Индивидуальные стили для каждой иконки
+  &__item:nth-child(1) &__icon-wrapper {
+    background: linear-gradient(135deg, #0088cc, #00a8ff); // Telegram
+  }
+  &__item:nth-child(2) &__icon-wrapper {
+    background: linear-gradient(135deg, #0077b5, #00a0dc); // LinkedIn
+  }
+  &__item:nth-child(3) &__icon-wrapper {
+    background: linear-gradient(135deg, #e4405f, #fd1d1d); // Instagram
+  }
+  &__item:nth-child(4) &__icon-wrapper {
+    background: linear-gradient(135deg, #333, #6e5494); // GitHub
+  }
+
+  &__item:hover &__icon-wrapper {
+    // Индивидуальные тени при наведении
+    &:nth-child(1) {
+      box-shadow: 0 15px 30px rgba(0, 168, 255, 0.4);
+    }
+    &:nth-child(2) {
+      box-shadow: 0 15px 30px rgba(0, 119, 181, 0.4);
+    }
+    &:nth-child(3) {
+      box-shadow: 0 15px 30px rgba(228, 64, 95, 0.4);
+    }
+    &:nth-child(4) {
+      box-shadow: 0 15px 30px rgba(110, 84, 148, 0.4);
+    }
+  }
+
+  &__label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    transform: translateZ(0);
+    display: inline-block;
+  }
+
+  &__item:hover &__label {
+    color: $primary;
+    transform: translateZ(20px);
+  }
+
+  &__online-dot {
     position: absolute;
     width: 12px;
     height: 12px;
     background: #4caf50;
     border-radius: 50%;
-    bottom: 5px;
-    right: 5px;
+    bottom: 9px;
+    right: 8px;
     border: 2px solid $dark;
-    z-index: 3;
+    z-index: 4;
     animation: pulse 1.5s infinite;
   }
 
-  .contacts__online-status {
+  &__online-status {
     font-size: 0.8em;
     color: #4caf50;
     margin-left: 5px;
   }
 
+  &__email {
+    margin-top: 50px;
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    a {
+      color: $primary;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: white;
+        text-shadow: 0 0 10px rgba($primary, 0.7);
+      }
+    }
+  }
+
+  &__copy-btn {
+    background: none;
+    border: none;
+    color: rgba(white, 0.6);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 5px;
+    font-size: 1rem;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &__copy-notification {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(10px, -50%);
+    background: rgba(white, 0.9);
+    color: $dark;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 5px solid rgba(white, 0.9);
+    }
+  }
+
+  &__copy-notification--show {
+    opacity: 1;
+  }
+
+  // Анимации
   @keyframes pulse {
-    0% {
+    0%,
+    100% {
       transform: scale(1);
       opacity: 1;
     }
@@ -195,9 +289,15 @@
       transform: scale(1.2);
       opacity: 0.8;
     }
+  }
+
+  @keyframes float {
+    0%,
     100% {
-      transform: scale(1);
-      opacity: 1;
+      transform: perspective(500px) translateY(0);
+    }
+    50% {
+      transform: perspective(500px) translateY(-10px);
     }
   }
 
