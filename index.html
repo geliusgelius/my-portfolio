@@ -25,8 +25,16 @@
         <button class="navbar__toggle">
           <span class="navbar__icon"></span>
         </button>
+        <div class="navbar__language">
+    <button class="language-btn active" data-lang="ru">
+      <span class="language-flag">🇷🇺</span> RU
+    </button>
+    <button class="language-btn" data-lang="en">
+      <span class="language-flag">🇬🇧</span> EN
+    </button>
+  </div>
         <ul class="navbar__menu">
-          <li><a href="#home" class="active">Главная</a></li>
+          <li><a href="#home" class="active" data-i18n="nav.home">Главная</a></li>
           <li><a href="#about">Обо мне</a></li>
           <li><a href="#skills">Навыки</a></li>
           <li><a href="#projects">Проекты</a></li>
@@ -430,9 +438,8 @@
   <div class="secret-trigger__wrapper">
     <button class="secret-trigger__btn">
       <span class="secret-trigger__icon">👀</span>
-      <span class="secret-trigger__text">Что-то спрятано здесь...</span>
+      <span class="secret-trigger__text">Кажется, здесь что-то есть...</span>
     </button>
-    <div class="secret-trigger__confetti-container"></div>
   </div>
 </div>
 
@@ -442,7 +449,7 @@
     <button class="easter-egg__close">
       <i class="fas fa-times"></i>
     </button>
-    <h2 class="easter-egg__title">🐱 Поймай розовых котиков! 🐱</h2>
+    <h2 class="easter-egg__title">🐱 Попался! А теперь тебе нужно погладить котиков! 🐱</h2>
     <div class="easter-egg__score">Очки: <span>0</span></div>
     <div class="easter-egg__timer">Время: <span>30</span>s</div>
     <div class="easter-egg__game-area"></div>
@@ -457,5 +464,6 @@
     <script src="js/projects.js"></script>
     <script src="js/contacts.js"></script>
     <script src="js/easter-egg.js" defer></script>
+    <script src="js/language.js" defer></script>
   </body>
 </html>

@@ -75,16 +75,6 @@
       transition: transform 0.3s ease;
     }
   }
-
-  &__confetti {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-  }
 }
 
 /* Стили для модального окна игры */
@@ -242,39 +232,6 @@
   }
 }
 
-/* Конфетти и анимации */
-.confetti-particle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: $primary;
-  border-radius: 50%;
-  animation: confetti-fall 3s linear forwards;
-  opacity: 0.8;
-}
-
-.secret-trigger__confetti {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  width: 100%;
-  height: calc(100% + 200px);
-  pointer-events: none;
-  overflow: visible !important;
-  z-index: 10000;
-}
-
-.confetti-particle {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: $primary;
-  border-radius: 50%;
-  animation: confetti-fall 3s linear forwards;
-  opacity: 0.8;
-  z-index: 10;
-}
-
 .cat {
   position: absolute;
   width: 60px;
@@ -297,21 +254,6 @@
 
   &.golden {
     filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.7)) brightness(1.1);
-  }
-}
-
-@keyframes confetti-fall {
-  0% {
-    transform: translateY(-100px) rotate(0deg) scale(0.5);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-    transform: translateY(0) rotate(0deg) scale(1);
-  }
-  100% {
-    transform: translateY(200px) rotate(360deg) scale(0.2);
-    opacity: 0;
   }
 }
 

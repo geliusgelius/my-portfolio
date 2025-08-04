@@ -2,11 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Проверка основных элементов
   const secretBtn = document.querySelector(".secret-trigger__btn");
   const gameSection = document.getElementById("easter-egg");
-  const confettiContainer = document.querySelector(
-    ".secret-trigger__confetti-container"
-  );
 
-  if (!secretBtn || !gameSection || !confettiContainer) {
+  if (!secretBtn || !gameSection) {
     console.error("Не найдены необходимые элементы для игры!");
     return;
   }
@@ -62,49 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflow = "";
       resetGame();
     }, 500);
-  }
-
-  function triggerConfetti() {
-    confettiContainer.innerHTML = "";
-
-    // Создаем 120 частиц для лучшего эффекта
-    for (let i = 0; i < 120; i++) {
-      const particle = document.createElement("div");
-      particle.className = "confetti-particle";
-      particle.style.left = `${Math.random() * 100}%`;
-
-      // Используем цвета из SCSS переменных через CSS-классы
-      const colorClasses = [
-        "confetti-primary",
-        "confetti-secondary",
-        "confetti-gold",
-        "confetti-pink",
-        "confetti-white",
-      ];
-      particle.classList.add(
-        colorClasses[Math.floor(Math.random() * colorClasses.length)]
-      );
-
-      particle.style.width = `${6 + Math.random() * 10}px`;
-      particle.style.height = particle.style.width;
-
-      if (Math.random() > 0.7) {
-        particle.style.borderRadius = "0";
-      }
-
-      const duration = 2 + Math.random() * 3;
-      particle.style.animation = `confetti-fall ${duration}s linear forwards`;
-      particle.style.animationDelay = `${Math.random() * 0.5}s`;
-
-      confettiContainer.appendChild(particle);
-    }
-
-    // Автоочистка через 5 секунд
-    setTimeout(() => {
-      if (confettiContainer) {
-        confettiContainer.innerHTML = "";
-      }
-    }, 5000);
   }
 
   // ========== Логика игры ========== //
