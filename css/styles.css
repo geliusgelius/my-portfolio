@@ -68,7 +68,7 @@ body {
 }
 .navbar .language-btn {
   border: none;
-  background: none;
+  background: rgba(255, 240, 245, 0.15);
   padding: 6px 12px;
   border-radius: 15px;
   cursor: pointer;
@@ -77,18 +77,28 @@ body {
   align-items: center;
   gap: 5px;
   transition: all 0.3s ease;
-  color: #8b3a62;
+  color: rgba(255, 240, 245, 0.8);
   font-size: 0.9rem;
+  border: 1px solid rgba(255, 105, 180, 0.2);
 }
 .navbar .language-btn.active {
   background: linear-gradient(135deg, #ff69b4, #ffb6c1);
   color: white;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
 }
 .navbar .language-btn:hover:not(.active) {
-  background: rgba(255, 105, 180, 0.1);
+  background: rgba(255, 105, 180, 0.2);
+  color: #fff0f5;
+  border-color: rgba(255, 105, 180, 0.4);
 }
 .navbar .language-btn .language-flag {
   font-size: 1em;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+.navbar .language-btn:hover .language-flag {
+  opacity: 1;
 }
 .navbar.active {
   left: 0;

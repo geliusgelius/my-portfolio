@@ -23,7 +23,7 @@
 
   .language-btn {
     border: none;
-    background: none;
+    background: rgba($light, 0.15); // Добавим фон для неактивных кнопок
     padding: 6px 12px;
     border-radius: 15px;
     cursor: pointer;
@@ -32,20 +32,31 @@
     align-items: center;
     gap: 5px;
     transition: all 0.3s ease;
-    color: $dark;
+    color: rgba($light, 0.8); // Сделаем текст немного прозрачным
     font-size: 0.9rem;
+    border: 1px solid rgba($primary, 0.2); // Добавим тонкую границу
 
     &.active {
       background: linear-gradient(135deg, $primary, $secondary);
       color: white;
+      border-color: transparent; // Убираем границу для активной кнопки
+      box-shadow: 0 2px 8px rgba($primary, 0.3); // Добавим тень для выделения
     }
 
     &:hover:not(.active) {
-      background: rgba($primary, 0.1);
+      background: rgba($primary, 0.2);
+      color: $light; // При наведении делаем текст полностью белым
+      border-color: rgba($primary, 0.4); // Усиливаем границу при наведении
     }
 
     .language-flag {
       font-size: 1em;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover .language-flag {
+      opacity: 1; // Флажок становится ярче при наведении
     }
   }
 

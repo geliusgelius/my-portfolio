@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Портфолио | Ангелина Смирнова</title>
+    <title data-i18n="title">Портфолио | Ангелина Смирнова</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,7 +15,7 @@
     <!-- Лоадер -->
     <div class="loader">
       <div class="loader__spinner"></div>
-      <p class="loader__text">Загрузка...</p>
+      <p class="loader__text" data-i18n="loader.text">Загрузка...</p>
     </div>
 
     <!-- Основной контент -->
@@ -26,19 +26,19 @@
           <span class="navbar__icon"></span>
         </button>
         <div class="navbar__language">
-    <button class="language-btn active" data-lang="ru">
-      <span class="language-flag">🇷🇺</span> RU
-    </button>
-    <button class="language-btn" data-lang="en">
-      <span class="language-flag">🇬🇧</span> EN
-    </button>
-  </div>
+          <button class="language-btn active" data-lang="ru">
+            <span class="language-flag">🇷🇺</span> RU
+          </button>
+          <button class="language-btn" data-lang="en">
+            <span class="language-flag">🇬🇧</span> EN
+          </button>
+        </div>
         <ul class="navbar__menu">
           <li><a href="#home" class="active" data-i18n="nav.home">Главная</a></li>
-          <li><a href="#about">Обо мне</a></li>
-          <li><a href="#skills">Навыки</a></li>
-          <li><a href="#projects">Проекты</a></li>
-          <li><a href="#contacts">Контакты</a></li>
+          <li><a href="#about" data-i18n="nav.about">Обо мне</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">Навыки</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Проекты</a></li>
+          <li><a href="#contacts" data-i18n="nav.contacts">Контакты</a></li>
         </ul>
       </nav>
 
@@ -49,9 +49,10 @@
             src="assets/images/avatar.jpg"
             alt="Моё фото"
             class="hero__image"
+            data-i18n="hero.image_alt"
           />
           <h1 class="hero__title">Ангелина Смирнова</h1>
-          <p class="hero__subtitle">Frontend Developer</p>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">Frontend Developer</p>
           <div class="hero__social">
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -64,14 +65,14 @@
       <section id="about" class="about">
         <div class="about__content">
           <div class="about__text">
-            <h2>Обо мне</h2>
-            <p>
+            <h2 data-i18n="about.title">Обо мне</h2>
+            <p data-i18n="about.text1">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Doloribus, voluptatum voluptatibus nemo aut cum provident
               reiciendis excepturi velit impedit laboriosam. Maiores consectetur
               rerum ducimus nam consequuntur provident nemo unde exercitationem.
             </p>
-            <p>
+            <p data-i18n="about.text2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
               veritatis a doloribus eligendi perferendis officia, accusantium
               impedit consequatur architecto sequi voluptatum eos maxime minus
@@ -81,30 +82,30 @@
 
           <div class="about__skills">
             <div class="about__skill-item">
-              <h3><i class="fas fa-code"></i> Разработка</h3>
-              <p>
+              <h3><i class="fas fa-code"></i> <span data-i18n="about.skills.development.title">Разработка</span></h3>
+              <p data-i18n="about.skills.development.text">
                 Создание адаптивных и доступных веб-приложений на современных
                 технологиях
               </p>
             </div>
 
-            <div class="about__skill-item">
-              <h3><i class="fas fa-paint-brush"></i> Дизайн</h3>
-              <p>
+           <div class="about__skill-item">
+              <h3><i class="fas fa-paint-brush"></i> <span data-i18n="about.skills.design.title">Дизайн</span></h3>
+              <p data-i18n="about.skills.design.text">
                 Уделяю внимание деталям, анимациям и пользовательскому опыту
               </p>
             </div>
 
             <div class="about__skill-item">
-              <h3><i class="fas fa-search"></i> Оптимизация</h3>
-              <p>
+              <h3><i class="fas fa-search"></i> <span data-i18n="about.skills.optimization.title">Оптимизация</span></h3>
+              <p data-i18n="about.skills.optimization.text">
                 Скорость загрузки и SEO — ключевые метрики для любого проекта
               </p>
             </div>
 
             <div class="about__skill-item">
-              <h3><i class="fas fa-heart"></i> Долгосрочная поддержка</h3>
-              <p>Чистый и поддерживаемый код для будущих обновлений</p>
+              <h3><i class="fas fa-heart"></i> <span data-i18n="about.skills.support.title">Долгосрочная поддержка</span></h3>
+              <p data-i18n="about.skills.support.text">Чистый и поддерживаемый код для будущих обновлений</p>
             </div>
           </div>
         </div>
@@ -113,13 +114,13 @@
       <!-- Навыки -->
       <section id="skills" class="skills">
         <div class="skills__header">
-          <h2>Технические навыки</h2>
+          <h2 data-i18n="skills.title">Технические навыки</h2>
         </div>
 
         <div class="skills__categories">
           <!-- Frontend -->
           <div class="skills__category">
-            <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+            <h3><i class="fas fa-laptop-code"></i> <span data-i18n="skills.categories.frontend">Frontend</span></h3>
 
             <div class="skills__item">
               <div class="skills__label">
@@ -164,7 +165,7 @@
 
           <!-- Инструменты -->
           <div class="skills__category">
-            <h3><i class="fas fa-tools"></i> Инструменты</h3>
+            <h3><i class="fas fa-tools"></i> <span data-i18n="skills.categories.tools">Инструменты</span></h3>
 
             <div class="skills__item">
               <div class="skills__label">
@@ -239,7 +240,7 @@
 
           <!-- CMS -->
           <div class="skills__category">
-            <h3><i class="fas fa-cogs"></i>Администрирование CMS</h3>
+            <h3><i class="fas fa-cogs"></i> <span data-i18n="skills.categories.cms">Администрирование CMS</span></h3>
 
             <div class="skills__item">
               <div class="skills__label">
@@ -253,7 +254,7 @@
 
             <div class="skills__item">
               <div class="skills__label">
-                <span>1C-Битрикс</span>
+                <span>1C-Bitrix</span>
                 <span>65%</span>
               </div>
               <div class="skills__progress">
@@ -277,7 +278,7 @@
       <!-- Проекты -->
       <section id="projects" class="projects">
         <div class="projects__header">
-          <h2>Мои проекты</h2>
+          <h2 data-i18n="projects.title">Мои проекты</h2>
         </div>
 
         <div class="projects__grid">
@@ -288,26 +289,27 @@
                 src="assets/images/project1.jpg"
                 alt="Лендинг для ресторана"
                 class="projects__image"
+                data-i18n="projects.project1.image_alt"
               />
               <div class="projects__overlay">
                 <div class="projects__tags">
                   <span>HTML/CSS</span>
                   <span>JavaScript</span>
-                  <span>Адаптивная верстка</span>
+                  <span data-i18n="projects.tags.responsive">Адаптивная верстка</span>
                 </div>
               </div>
             </div>
             <div class="projects__info">
-              <h3 class="projects__title">Лендинг для ресторана</h3>
-              <p class="projects__description">
+              <h3 class="projects__title" data-i18n="projects.project1.title">Лендинг для ресторана</h3>
+              <p class="projects__description" data-i18n="projects.project1.description">
                 Современный адаптивный лендинг с анимациями и формой
                 бронирования.
               </p>
               <div class="projects__links">
-                <a href="#" target="_blank">
+                <a href="#" target="_blank" data-i18n="projects.links.demo">
                   <i class="fas fa-external-link-alt"></i> Демо
                 </a>
-                <a href="#" target="_blank">
+                <a href="#" target="_blank" data-i18n="projects.links.code">
                   <i class="fab fa-github"></i> Код
                 </a>
               </div>
@@ -321,6 +323,7 @@
                 src="assets/images/project2.jpg"
                 alt="Интернет-магазин"
                 class="projects__image"
+                data-i18n="projects.project2.image_alt"
               />
               <div class="projects__overlay">
                 <div class="projects__tags">
@@ -331,15 +334,15 @@
               </div>
             </div>
             <div class="projects__info">
-              <h3 class="projects__title">Интернет-магазин</h3>
-              <p class="projects__description">
+              <h3 class="projects__title" data-i18n="projects.project2.title">Интернет-магазин</h3>
+              <p class="projects__description" data-i18n="projects.project2.description">
                 Полнофункциональный магазин с корзиной и платежной системой.
               </p>
               <div class="projects__links">
-                <a href="#" target="_blank">
+                <a href="#" target="_blank" data-i18n="projects.links.demo">
                   <i class="fas fa-external-link-alt"></i> Демо
                 </a>
-                <a href="#" target="_blank">
+                <a href="#" target="_blank" data-i18n="projects.links.code">
                   <i class="fab fa-github"></i> Код
                 </a>
               </div>
@@ -351,10 +354,10 @@
       </section>
 
       <!-- Контакты -->
-      <section id="contacts" class="contacts">
+     <section id="contacts" class="contacts">
         <div class="contacts__header">
-          <h2>Контакты</h2>
-          <p>
+          <h2 data-i18n="contacts.title">Контакты</h2>
+          <p data-i18n="contacts.subtitle">
             Хотите обсудить проект или просто поздороваться? Буду рада общению!
           </p>
         </div>
@@ -371,10 +374,10 @@
                 <i class="fab fa-telegram-plane"></i>
                 <span class="contacts__online-dot"></span>
               </div>
-              <span class="contacts__label"
-                >Telegram
-                <span class="contacts__online-status">(Online)</span></span
-              >
+              <span class="contacts__label">
+                <span data-i18n="contacts.telegram">Telegram</span>
+                <span class="contacts__online-status" data-i18n="contacts.online">(Online)</span>
+              </span>
             </a>
           </div>
 
@@ -388,7 +391,7 @@
               <div class="contacts__icon-wrapper">
                 <i class="fab fa-linkedin-in"></i>
               </div>
-              <span class="contacts__label">LinkedIn</span>
+              <span class="contacts__label" data-i18n="contacts.linkedin">LinkedIn</span>
             </a>
           </div>
 
@@ -402,7 +405,7 @@
               <div class="contacts__icon-wrapper">
                 <i class="fab fa-instagram"></i>
               </div>
-              <span class="contacts__label">Instagram</span>
+              <span class="contacts__label" data-i18n="contacts.instagram">Instagram</span>
             </a>
           </div>
 
@@ -416,46 +419,47 @@
               <div class="contacts__icon-wrapper">
                 <i class="fab fa-github"></i>
               </div>
-              <span class="contacts__label">GitHub</span>
+              <span class="contacts__label" data-i18n="contacts.github">GitHub</span>
             </a>
           </div>
         </div>
 
         <div class="contacts__email">
-          Или напишите на
-          <a href="mailto:angelina68tmb@gmail.com" class="contacts__email-link"
-            >angelina68tmb@gmail.com</a
-          >
+          <span data-i18n="contacts.email.text">Или напишите на</span>
+          <a href="mailto:angelina68tmb@gmail.com" class="contacts__email-link">
+            angelina68tmb@gmail.com
+          </a>
           <button class="contacts__copy-btn" aria-label="Скопировать email">
             <i class="far fa-copy"></i>
           </button>
-          <span class="contacts__copy-notification">Скопировано!</span>
+          <span class="contacts__copy-notification" data-i18n="contacts.email.copied">Скопировано!</span>
         </div>
       </section>
 
+
     <!-- Секретная кнопка -->
-<div class="secret-trigger">
-  <div class="secret-trigger__wrapper">
-    <button class="secret-trigger__btn">
-      <span class="secret-trigger__icon">👀</span>
-      <span class="secret-trigger__text">Кажется, здесь что-то есть...</span>
-    </button>
-  </div>
-</div>
+   <div class="secret-trigger">
+        <div class="secret-trigger__wrapper">
+          <button class="secret-trigger__btn">
+            <span class="secret-trigger__icon">👀</span>
+            <span class="secret-trigger__text" data-i18n="secret.text">Кажется, здесь что-то есть...</span>
+          </button>
+        </div>
+      </div>
 
 <!-- Модальное окно игры -->
 <section id="easter-egg" class="easter-egg">
-  <div class="easter-egg__container">
-    <button class="easter-egg__close">
-      <i class="fas fa-times"></i>
-    </button>
-    <h2 class="easter-egg__title">🐱 Попался! А теперь тебе нужно погладить котиков! 🐱</h2>
-    <div class="easter-egg__score">Очки: <span>0</span></div>
-    <div class="easter-egg__timer">Время: <span>30</span>s</div>
-    <div class="easter-egg__game-area"></div>
-    <button class="easter-egg__start-btn">Начать игру</button>
-  </div>
-</section>
+        <div class="easter-egg__container">
+          <button class="easter-egg__close">
+            <i class="fas fa-times"></i>
+          </button>
+          <h2 class="easter-egg__title" data-i18n="easter_egg.title">🐱 Попался! А теперь тебе нужно погладить котиков! 🐱</h2>
+          <div class="easter-egg__score" data-i18n="easter_egg.score">Очки: <span>0</span></div>
+          <div class="easter-egg__timer" data-i18n="easter_egg.timer">Время: <span>30</span>s</div>
+          <div class="easter-egg__game-area"></div>
+          <button class="easter-egg__start-btn" data-i18n="easter_egg.start_button">Начать игру</button>
+        </div>
+      </section>
 
     <script src="js/main.js"></script>
     <script src="js/game.js"></script>
@@ -464,6 +468,7 @@
     <script src="js/projects.js"></script>
     <script src="js/contacts.js"></script>
     <script src="js/easter-egg.js" defer></script>
-    <script src="js/language.js" defer></script>
+    <script src="js/translations.js"></script>
+    <script src="js/language.js"></script>
   </body>
 </html>
