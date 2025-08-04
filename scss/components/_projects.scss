@@ -1,0 +1,157 @@
+// scss/components/_projects.scss
+.projects {
+  padding: 100px 20px;
+  background: linear-gradient(to bottom, lighten($primary, 42%), white);
+  position: relative;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h2 {
+      font-size: 2.8rem;
+      color: $dark;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, $primary, $secondary);
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__item {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba($dark, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba($dark, 0.2);
+
+      .projects__image {
+        transform: scale(1.05);
+      }
+
+      .projects__overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__image-container {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba($primary, 0.8), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+
+    span {
+      background: rgba(white, 0.9);
+      color: $primary;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  }
+
+  &__info {
+    padding: 25px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: $dark;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    color: $text-dark;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  &__links {
+    display: flex;
+    gap: 15px;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: $primary;
+      font-weight: 600;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $secondary;
+
+        i {
+          transform: translateX(3px);
+        }
+      }
+
+      i {
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 70px 20px;
+
+    &__header h2 {
+      font-size: 2.3rem;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

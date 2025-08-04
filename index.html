@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Портфолио | Ангелина Смирнова</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Лоадер -->
+    <div class="loader">
+      <div class="loader__spinner"></div>
+      <p class="loader__text">Загрузка...</p>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="main-content">
+      <!-- Боковое меню -->
+      <nav class="navbar">
+        <button class="navbar__toggle">
+          <span class="navbar__icon"></span>
+        </button>
+        <ul class="navbar__menu">
+          <li><a href="#home" class="active">Главная</a></li>
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#skills">Навыки</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <!-- Главный экран -->
+      <section id="home" class="hero">
+        <div class="hero__content">
+          <img
+            src="assets/images/avatar.jpg"
+            alt="Моё фото"
+            class="hero__image"
+          />
+          <h1 class="hero__title">Ангелина Смирнова</h1>
+          <p class="hero__subtitle">Frontend Developer</p>
+          <div class="hero__social">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Обо мне -->
+      <section id="about" class="about">
+        <div class="about__content">
+          <div class="about__text">
+            <h2>Обо мне</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Doloribus, voluptatum voluptatibus nemo aut cum provident
+              reiciendis excepturi velit impedit laboriosam. Maiores consectetur
+              rerum ducimus nam consequuntur provident nemo unde exercitationem.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+              veritatis a doloribus eligendi perferendis officia, accusantium
+              impedit consequatur architecto sequi voluptatum eos maxime minus
+              sapiente voluptate recusandae at ab aut!
+            </p>
+          </div>
+
+          <div class="about__skills">
+            <div class="about__skill-item">
+              <h3><i class="fas fa-code"></i> Разработка</h3>
+              <p>
+                Создание адаптивных и доступных веб-приложений на современных
+                технологиях
+              </p>
+            </div>
+
+            <div class="about__skill-item">
+              <h3><i class="fas fa-paint-brush"></i> Дизайн</h3>
+              <p>
+                Уделяю внимание деталям, анимациям и пользовательскому опыту
+              </p>
+            </div>
+
+            <div class="about__skill-item">
+              <h3><i class="fas fa-search"></i> Оптимизация</h3>
+              <p>
+                Скорость загрузки и SEO — ключевые метрики для любого проекта
+              </p>
+            </div>
+
+            <div class="about__skill-item">
+              <h3><i class="fas fa-heart"></i> Долгосрочная поддержка</h3>
+              <p>Чистый и поддерживаемый код для будущих обновлений</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Навыки -->
+      <section id="skills" class="skills">
+        <div class="skills__header">
+          <h2>Технические навыки</h2>
+        </div>
+
+        <div class="skills__categories">
+          <!-- Frontend -->
+          <div class="skills__category">
+            <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>HTML/CSS</span>
+                <span>95%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 95%"></div>
+              </div>
+            </div>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>JavaScript</span>
+                <span>85%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>React</span>
+                <span>80%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>SASS/SCSS</span>
+                <span>90%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Инструменты -->
+          <div class="skills__category">
+            <h3><i class="fas fa-tools"></i> Инструменты</h3>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>Git</span>
+                <span>85%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>Vite</span>
+                <span>80%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>Figma</span>
+                <span>90%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 90%"></div>
+              </div>
+            </div>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>Adobe Photoshop</span>
+                <span>75%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 75%"></div>
+              </div>
+            </div>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>Adobe Premiere Pro</span>
+                <span>70%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 70%"></div>
+              </div>
+            </div>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>Adobe Lightroom</span>
+                <span>80%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>CapCut</span>
+                <span>85%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 100%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CMS -->
+          <div class="skills__category">
+            <h3><i class="fas fa-cogs"></i>Администрирование CMS</h3>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>WordPress</span>
+                <span>75%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 75%"></div>
+              </div>
+            </div>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>1C-Битрикс</span>
+                <span>65%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 65%"></div>
+              </div>
+            </div>
+
+            <div class="skills__item">
+              <div class="skills__label">
+                <span>MODX</span>
+                <span>60%</span>
+              </div>
+              <div class="skills__progress">
+                <div class="skills__progress-bar" style="width: 60%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Проекты -->
+      <section id="projects" class="projects">
+        <div class="projects__header">
+          <h2>Мои проекты</h2>
+        </div>
+
+        <div class="projects__grid">
+          <!-- Проект 1 -->
+          <div class="projects__item">
+            <div class="projects__image-container">
+              <img
+                src="assets/images/project1.jpg"
+                alt="Лендинг для ресторана"
+                class="projects__image"
+              />
+              <div class="projects__overlay">
+                <div class="projects__tags">
+                  <span>HTML/CSS</span>
+                  <span>JavaScript</span>
+                  <span>Адаптивная верстка</span>
+                </div>
+              </div>
+            </div>
+            <div class="projects__info">
+              <h3 class="projects__title">Лендинг для ресторана</h3>
+              <p class="projects__description">
+                Современный адаптивный лендинг с анимациями и формой
+                бронирования.
+              </p>
+              <div class="projects__links">
+                <a href="#" target="_blank">
+                  <i class="fas fa-external-link-alt"></i> Демо
+                </a>
+                <a href="#" target="_blank">
+                  <i class="fab fa-github"></i> Код
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Проект 2 -->
+          <div class="projects__item">
+            <div class="projects__image-container">
+              <img
+                src="assets/images/project2.jpg"
+                alt="Интернет-магазин"
+                class="projects__image"
+              />
+              <div class="projects__overlay">
+                <div class="projects__tags">
+                  <span>React</span>
+                  <span>Next.js</span>
+                  <span>Stripe</span>
+                </div>
+              </div>
+            </div>
+            <div class="projects__info">
+              <h3 class="projects__title">Интернет-магазин</h3>
+              <p class="projects__description">
+                Полнофункциональный магазин с корзиной и платежной системой.
+              </p>
+              <div class="projects__links">
+                <a href="#" target="_blank">
+                  <i class="fas fa-external-link-alt"></i> Демо
+                </a>
+                <a href="#" target="_blank">
+                  <i class="fab fa-github"></i> Код
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Добавьте остальные проекты по аналогии -->
+        </div>
+      </section>
+
+      <!-- Контакты -->
+      <section id="contacts" class="contacts">
+        <div class="contacts__header">
+          <h2>Контакты</h2>
+          <p>
+            Есть вопросы или хотите обсудить проект? Свяжитесь со мной любым
+            удобным способом!
+          </p>
+        </div>
+
+        <div class="contacts__container">
+          <div class="contacts__info">
+            <div class="contacts__item">
+              <div class="contacts__icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contacts__details">
+                <h3>Email</h3>
+                <a href="mailto:example@example.com">example@example.com</a>
+              </div>
+            </div>
+
+            <div class="contacts__item">
+              <div class="contacts__icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contacts__details">
+                <h3>Телефон</h3>
+                <a href="tel:+1234567890">+1 (234) 567-89-00</a>
+              </div>
+            </div>
+
+            <div class="contacts__item">
+              <div class="contacts__icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contacts__details">
+                <h3>Локация</h3>
+                <p>Москва, Россия</p>
+              </div>
+            </div>
+
+            <div class="contacts__social">
+              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-codepen"></i></a>
+            </div>
+          </div>
+
+          <form class="contacts__form">
+            <div class="contacts__form-group">
+              <label for="name" class="contacts__label">Ваше имя</label>
+              <input
+                type="text"
+                id="name"
+                class="contacts__input"
+                placeholder="Как к вам обращаться?"
+                required
+              />
+            </div>
+
+            <div class="contacts__form-group">
+              <label for="email" class="contacts__label">Email</label>
+              <input
+                type="email"
+                id="email"
+                class="contacts__input"
+                placeholder="Ваш email для ответа"
+                required
+              />
+            </div>
+
+            <div class="contacts__form-group">
+              <label for="message" class="contacts__label">Сообщение</label>
+              <textarea
+                id="message"
+                class="contacts__textarea"
+                placeholder="Расскажите о вашем проекте..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="contacts__submit">
+              <i class="fas fa-paper-plane"></i> Отправить сообщение
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Мини-игра -->
+      <div class="mini-game">
+        <button id="start-game">Хочешь сыграть? Кликай!</button>
+        <div id="game-area"></div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/projects.js"></script>
+  </body>
+</html>
