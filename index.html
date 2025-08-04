@@ -9,6 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   </head>
   <body>
     <!-- Лоадер -->
@@ -337,7 +338,7 @@
             </div>
           </div>
 
-          <!-- Добавьте остальные проекты по аналогии -->
+          
         </div>
       </section>
 
@@ -424,9 +425,23 @@
         </div>
       </section>
 
-      <!-- Мини-игра -->
+    <!-- Секретная кнопка -->
+<div class="secret-trigger">
+  <div class="secret-trigger__wrapper">
+    <button class="secret-trigger__btn">
+      <span class="secret-trigger__icon">👀</span>
+      <span class="secret-trigger__text">Что-то спрятано здесь...</span>
+    </button>
+    <div class="secret-trigger__confetti-container"></div>
+  </div>
+</div>
+
+<!-- Модальное окно игры -->
 <section id="easter-egg" class="easter-egg">
   <div class="easter-egg__container">
+    <button class="easter-egg__close">
+      <i class="fas fa-times"></i>
+    </button>
     <h2 class="easter-egg__title">🐱 Поймай розовых котиков! 🐱</h2>
     <div class="easter-egg__score">Очки: <span>0</span></div>
     <div class="easter-egg__timer">Время: <span>30</span>s</div>
@@ -441,6 +456,6 @@
     <script src="js/skills.js"></script>
     <script src="js/projects.js"></script>
     <script src="js/contacts.js"></script>
-    <script src="js/easter-egg.js"></script>
+    <script src="js/easter-egg.js" defer></script>
   </body>
 </html>

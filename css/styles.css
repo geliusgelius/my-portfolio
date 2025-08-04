@@ -911,53 +911,145 @@ body {
   }
 }
 
-.easter-egg {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, white, white);
+/* Стили для секретной кнопки */
+.secret-trigger {
   text-align: center;
+  padding: 40px 0;
+  position: relative;
+  transition: opacity 0.5s ease;
+}
+.secret-trigger__wrapper {
+  display: inline-block;
+  position: relative;
+}
+.secret-trigger__btn {
+  background: linear-gradient(135deg, rgb(255, 181.5, 218.25), white);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1;
 }
-.easter-egg::before {
+.secret-trigger__btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+}
+.secret-trigger__btn:hover .secret-trigger__text::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.secret-trigger__btn::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ff66b2" opacity="0.2" d="M30,50 Q50,30 70,50 Q50,70 30,50"/></svg>');
-  opacity: 0.3;
+  background: linear-gradient(135deg, #ff69b4, #ffb6c1);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+.secret-trigger__icon {
+  font-size: 1.3rem;
+  animation: pulse 2s infinite;
+}
+.secret-trigger__text {
+  position: relative;
+}
+.secret-trigger__text::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+.secret-trigger__confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Стили для модального окна игры */
+.easter-egg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 .easter-egg__container {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
   max-width: 800px;
-  margin: 0 auto;
+  width: 90%;
   position: relative;
-  z-index: 2;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+.easter-egg__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #ff69b4;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.easter-egg__close:hover {
+  transform: rotate(90deg);
 }
 .easter-egg__title {
   font-size: 2rem;
-  color: rgb(255, 28.5, 141.75);
+  color: #ff69b4;
   margin-bottom: 20px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 .easter-egg__score, .easter-egg__timer {
   font-size: 1.3rem;
   color: #8b3a62;
   margin-bottom: 15px;
-  font-weight: 600;
+  text-align: center;
 }
 .easter-egg__score span, .easter-egg__timer span {
-  color: #ff69b4;
+  font-weight: bold;
+  color: #ffb6c1;
 }
 .easter-egg__game-area {
   width: 100%;
   height: 400px;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 20px;
-  margin: 20px auto;
+  background: rgba(255, 105, 180, 0.05);
+  border-radius: 15px;
+  margin: 20px 0;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+  border: 2px dashed rgba(255, 105, 180, 0.2);
 }
 .easter-egg__start-btn {
   background: linear-gradient(135deg, #ff69b4, #ffb6c1);
@@ -965,40 +1057,166 @@ body {
   border: none;
   padding: 15px 30px;
   border-radius: 50px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
   box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
 }
 .easter-egg__start-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
 }
-.easter-egg__start-btn:active {
-  transform: translateY(0);
+
+/* Стили для окна результатов */
+.game-result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  z-index: 20;
+  border: 2px solid #ff69b4;
 }
-.easter-egg .cat {
+.game-result h3 {
+  color: #ff0381;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.game-result p {
+  color: #8b3a62; /* Темный текст */
+  font-size: 1.2rem;
+  margin: 10px 0;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.game-result p:last-child {
+  font-weight: 700;
+  color: rgb(255, 105.5, 128.0273972603);
+  font-size: 1.3rem;
+  margin-top: 20px;
+}
+
+/* Стили для котиков */
+.cat {
   position: absolute;
   width: 60px;
   height: 60px;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23ff66b2" d="M85,40c0,15-20,35-35,35S15,55,15,40s15-25,35-25S85,25,85,40z"/><circle fill="%23fff" cx="65" cy="35" r="5"/><circle fill="%23fff" cx="75" cy="35" r="5"/><circle fill="%23333" cx="65" cy="35" r="2"/><circle fill="%23333" cx="75" cy="35" r="2"/><path fill="none" stroke="%23333" stroke-width="2" d="M70,45 Q70,50 65,50"/><path fill="%23ff66b2" d="M40,60c0,0 10,15 30,15s30-15 30-15H40z"/><path fill="%23ff66b2" d="M25,30c0,0-10-5-10-15s10-5,10,0"/><path fill="%23ff66b2" d="M75,30c0,0 10-5 10-15s-10-5-10,0"/></svg>');
   background-size: contain;
+  background-repeat: no-repeat;
   cursor: pointer;
   transition: transform 0.2s;
   z-index: 10;
 }
-.easter-egg .cat:hover {
+.cat:hover {
   transform: scale(1.1);
 }
-.easter-egg .cat:active {
+.cat:active {
   transform: scale(0.9);
 }
-@media (max-width: 768px) {
-  .easter-egg {
-    padding: 50px 15px;
+.cat.golden {
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.7));
+}
+
+/* Конфетти и анимации */
+.confetti-particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ff69b4;
+  border-radius: 50%;
+  animation: confetti-fall 3s linear forwards;
+  opacity: 0.8;
+}
+
+.secret-trigger__confetti {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 200px);
+  pointer-events: none;
+  overflow: visible !important;
+  z-index: 10000;
+}
+
+.confetti-particle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #ff69b4;
+  border-radius: 50%;
+  animation: confetti-fall 3s linear forwards;
+  opacity: 0.8;
+  z-index: 10;
+}
+
+.cat {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  z-index: 10;
+  image-rendering: -webkit-optimize-contrast;
+}
+.cat:hover {
+  transform: scale(1.1);
+}
+.cat:active {
+  transform: scale(0.9);
+}
+.cat.golden {
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.7)) brightness(1.1);
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg) scale(0.5);
+    opacity: 0;
   }
-  .easter-egg__title {
-    font-size: 1.8rem;
+  10% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translateY(200px) rotate(360deg) scale(0.2);
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+/* Адаптивность */
+@media (max-width: 768px) {
+  .easter-egg__container {
+    padding: 30px 20px;
   }
   .easter-egg__game-area {
     height: 300px;
