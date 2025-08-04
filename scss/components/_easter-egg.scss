@@ -1,0 +1,111 @@
+.easter-egg {
+  padding: 80px 20px;
+  background: linear-gradient(
+    135deg,
+    lighten($primary, 40%),
+    lighten($secondary, 40%)
+  );
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ff66b2" opacity="0.2" d="M30,50 Q50,30 70,50 Q50,70 30,50"/></svg>');
+    opacity: 0.3;
+  }
+
+  &__container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: darken($primary, 15%);
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &__score,
+  &__timer {
+    font-size: 1.3rem;
+    color: $dark;
+    margin-bottom: 15px;
+    font-weight: 600;
+
+    span {
+      color: $primary;
+    }
+  }
+
+  &__game-area {
+    width: 100%;
+    height: 400px;
+    background: rgba(white, 0.7);
+    border-radius: 20px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba($primary, 0.2);
+  }
+
+  &__start-btn {
+    background: linear-gradient(135deg, $primary, $secondary);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba($primary, 0.3);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba($primary, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  .cat {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23ff66b2" d="M85,40c0,15-20,35-35,35S15,55,15,40s15-25,35-25S85,25,85,40z"/><circle fill="%23fff" cx="65" cy="35" r="5"/><circle fill="%23fff" cx="75" cy="35" r="5"/><circle fill="%23333" cx="65" cy="35" r="2"/><circle fill="%23333" cx="75" cy="35" r="2"/><path fill="none" stroke="%23333" stroke-width="2" d="M70,45 Q70,50 65,50"/><path fill="%23ff66b2" d="M40,60c0,0 10,15 30,15s30-15 30-15H40z"/><path fill="%23ff66b2" d="M25,30c0,0-10-5-10-15s10-5,10,0"/><path fill="%23ff66b2" d="M75,30c0,0 10-5 10-15s-10-5-10,0"/></svg>');
+    background-size: contain;
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 10;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 50px 15px;
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__game-area {
+      height: 300px;
+    }
+  }
+}
