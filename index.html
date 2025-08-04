@@ -346,88 +346,75 @@
         <div class="contacts__header">
           <h2>Контакты</h2>
           <p>
-            Есть вопросы или хотите обсудить проект? Свяжитесь со мной любым
-            удобным способом!
+            Хотите обсудить проект или просто поздороваться? Буду рада общению!
           </p>
         </div>
 
-        <div class="contacts__container">
-          <div class="contacts__info">
-            <div class="contacts__item">
-              <div class="contacts__icon">
-                <i class="fas fa-envelope"></i>
+        <div class="contacts__items">
+          <!-- Telegram -->
+          <div class="contacts__item">
+            <a
+              href="https://t.me/your_username"
+              target="_blank"
+              class="contacts__link"
+            >
+              <div class="contacts__icon-wrapper">
+                <i class="fab fa-telegram-plane"></i>
+                <span class="contacts__online-dot"></span>
               </div>
-              <div class="contacts__details">
-                <h3>Email</h3>
-                <a href="mailto:example@example.com">example@example.com</a>
-              </div>
-            </div>
-
-            <div class="contacts__item">
-              <div class="contacts__icon">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-              <div class="contacts__details">
-                <h3>Телефон</h3>
-                <a href="tel:+1234567890">+1 (234) 567-89-00</a>
-              </div>
-            </div>
-
-            <div class="contacts__item">
-              <div class="contacts__icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="contacts__details">
-                <h3>Локация</h3>
-                <p>Москва, Россия</p>
-              </div>
-            </div>
-
-            <div class="contacts__social">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
-              <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" target="_blank"><i class="fab fa-codepen"></i></a>
-            </div>
+              <span class="contacts__label"
+                >Telegram
+                <span class="contacts__online-status">(Online)</span></span
+              >
+            </a>
           </div>
 
-          <form class="contacts__form">
-            <div class="contacts__form-group">
-              <label for="name" class="contacts__label">Ваше имя</label>
-              <input
-                type="text"
-                id="name"
-                class="contacts__input"
-                placeholder="Как к вам обращаться?"
-                required
-              />
-            </div>
+          <!-- LinkedIn -->
+          <div class="contacts__item">
+            <a
+              href="https://linkedin.com/in/your_profile"
+              target="_blank"
+              class="contacts__link"
+            >
+              <div class="contacts__icon-wrapper">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <span class="contacts__label">LinkedIn</span>
+            </a>
+          </div>
 
-            <div class="contacts__form-group">
-              <label for="email" class="contacts__label">Email</label>
-              <input
-                type="email"
-                id="email"
-                class="contacts__input"
-                placeholder="Ваш email для ответа"
-                required
-              />
-            </div>
+          <!-- Instagram -->
+          <div class="contacts__item">
+            <a
+              href="https://instagram.com/gelius_gelius"
+              target="_blank"
+              class="contacts__link"
+            >
+              <div class="contacts__icon-wrapper">
+                <i class="fab fa-instagram"></i>
+              </div>
+              <span class="contacts__label">Instagram</span>
+            </a>
+          </div>
 
-            <div class="contacts__form-group">
-              <label for="message" class="contacts__label">Сообщение</label>
-              <textarea
-                id="message"
-                class="contacts__textarea"
-                placeholder="Расскажите о вашем проекте..."
-                required
-              ></textarea>
-            </div>
+          <!-- GitHub -->
+          <div class="contacts__item">
+            <a
+              href="https://github.com/geliusgelius"
+              target="_blank"
+              class="contacts__link"
+            >
+              <div class="contacts__icon-wrapper">
+                <i class="fab fa-github"></i>
+              </div>
+              <span class="contacts__label">GitHub</span>
+            </a>
+          </div>
+        </div>
 
-            <button type="submit" class="contacts__submit">
-              <i class="fas fa-paper-plane"></i> Отправить сообщение
-            </button>
-          </form>
+        <div class="contacts__email">
+          Или напишите на
+          <a href="mailto:angelina68tmb@gmail.com">angelina68tmb@gmail.com</a>
         </div>
       </section>
 
@@ -443,5 +430,6 @@
     <script src="js/about.js"></script>
     <script src="js/skills.js"></script>
     <script src="js/projects.js"></script>
+    <script src="js/contacts.js"></script>
   </body>
 </html>
