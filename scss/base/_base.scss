@@ -1,0 +1,32 @@
+body {
+  font-family: $font-main, $font-fallback;
+  font-weight: $font-regular;
+  line-height: 1.6;
+}
+
+// Заголовки
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-title, $font-fallback;
+  font-weight: $font-bold;
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+.title-light {
+  font-weight: $font-light;
+}
+
+.title-medium {
+  font-weight: $font-medium;
+}
+
+button,
+.btn {
+  font-family: $font-main;
+  font-weight: $font-medium;
+}

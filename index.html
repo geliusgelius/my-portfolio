@@ -28,10 +28,10 @@
         </button>
         <div class="navbar__language">
           <button class="language-btn active" data-lang="ru">
-            <span class="language-flag">🇷🇺</span> RU
+            <span class="language-flag"></span> RU
           </button>
           <button class="language-btn" data-lang="en">
-            <span class="language-flag">🇬🇧</span> EN
+            <span class="language-flag"></span> EN
           </button>
         </div>
         <ul class="navbar__menu">
@@ -44,55 +44,31 @@
       </nav>
 
       <!-- Главный экран -->
-      <section id="home" class="hero">
-  <div class="hero__animations">
-    <div class="hero__circles"></div>
-    <div class="hero__particles">
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-    </div>
-  </div>
+   <section id="home" class="hero">
   <div class="hero__content">
-    <img
-      src="assets/images/avatar.jpg"
-      alt="Моё фото"
-      class="hero__image"
-      data-i18n="hero.image_alt"
-    />
-
-    <div class="tech-orbits">
-    <!-- Внутренний круг (ближе к фото) -->
-    <div class="orbit orbit--inner">
-      <div class="tech-logo" data-tech="html">HTML</div>
-      <div class="tech-logo" data-tech="css">CSS</div>
-    </div>
-    
-    <!-- Внешний круг (дальше от фото) -->
-    <div class="orbit orbit--outer">
-      <div class="tech-logo" data-tech="js">JS</div>
-      <div class="tech-logo" data-tech="react">React</div>
-    </div>
-  </div>
-
-    <div class="hero__birthdate">
-      <div class="hero__birthdate-container">
-        <div class="hero__birthdate-front">📅</div>
-        <div class="hero__birthdate-back">03.09.1998</div>
+    <div class="hero__image-wrapper">
+      <img
+        src="assets/images/avatar.jpg"
+        alt="Моё фото"
+        class="hero__image"
+        data-i18n="hero.image_alt"
+      />
+      
+      <div class="hero__birthdate">
+        <div class="hero__birthdate-container">
+          <div class="hero__birthdate-front">📅</div>
+          <div class="hero__birthdate-back">03/09/1998</div>
+        </div>
       </div>
     </div>
 
     <h1 class="hero__title">Ангелина Смирнова</h1>
-    <p class="hero__subtitle" data-i18n="hero.subtitle">Frontend Developer</p>
+    <p class="hero__subtitle" data-i18n="hero.subtitle">Frontend-Developer</p>
     <div class="hero__social">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
       <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
     </div>
   </div>
 </section>
