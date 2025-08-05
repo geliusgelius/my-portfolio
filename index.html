@@ -44,6 +44,15 @@
 
       <!-- Главный экран -->
       <section id="home" class="hero">
+          <div class="hero__animations">
+    <div class="hero__circles"></div>
+    <div class="hero__particles">
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+</div>
+  </div>
         <div class="hero__content">
           <img
             src="assets/images/avatar.jpg"
@@ -51,6 +60,15 @@
             class="hero__image"
             data-i18n="hero.image_alt"
           />
+
+<div class="hero__birthdate">
+    <div class="hero__birthdate-container">
+      <div class="hero__birthdate-front">📅</div>
+      <div class="hero__birthdate-back">03.09.1998</div>
+    </div>
+  </div>
+
+
           <h1 class="hero__title">Ангелина Смирнова</h1>
           <p class="hero__subtitle" data-i18n="hero.subtitle">Frontend Developer</p>
           <div class="hero__social">
@@ -468,7 +486,8 @@
     <script src="js/projects.js"></script>
     <script src="js/contacts.js"></script>
     <script src="js/easter-egg.js" defer></script>
-    <script src="js/translations.js"></script>
-    <script src="js/language.js"></script>
+    <script type="module" src="js/translations.js"></script>
+    <script type="module" src="js/language.js"></script>
+    
   </body>
 </html>

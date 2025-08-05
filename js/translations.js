@@ -12,7 +12,7 @@ export const translations = {
       contacts: "Contacts",
     },
     hero: {
-      subtitle: "Frontend Developer",
+      subtitle: "Frontend-Developer",
       image_alt: "My photo",
     },
     about: {

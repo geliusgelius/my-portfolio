@@ -80,22 +80,47 @@ document.addEventListener("DOMContentLoaded", () => {
     cat.style.width = `${size}px`;
     cat.style.height = `${size}px`;
 
-    cat.addEventListener("click", () => {
+    cat.addEventListener("click", (e) => {
       const points = isGolden ? 5 : 1;
       score += points;
       scoreDisplay.textContent = score;
 
       (isGolden ? sounds.gold : sounds.meow).play().catch(console.error);
 
-      // Анимация "+N"
-      const plusText = document.createElement("div");
-      plusText.className = isGolden ? "points-gold" : "points-pink";
-      plusText.textContent = `+${points}`;
-      plusText.style.left = cat.style.left;
-      plusText.style.top = cat.style.top;
-      gameArea.appendChild(plusText);
+      // Создаем элемент с анимацией
+      const pointsElement = document.createElement("div");
+      pointsElement.className = "points-animation";
+      pointsElement.textContent = `+${points}`;
+      pointsElement.style.color = isGolden ? "#FFD700" : "#FF69B4";
+      pointsElement.style.fontWeight = "bold";
+      pointsElement.style.fontSize = isGolden ? "24px" : "20px";
+      pointsElement.style.position = "absolute";
 
-      setTimeout(() => plusText.remove(), 1000);
+      // Позиционируем рядом с курсором
+      pointsElement.style.left = `${
+        e.clientX - gameArea.getBoundingClientRect().left + 10
+      }px`;
+      pointsElement.style.top = `${
+        e.clientY - gameArea.getBoundingClientRect().top
+      }px`;
+
+      gameArea.appendChild(pointsElement);
+
+      // Анимация всплывания
+      let pos = 0;
+      const animate = () => {
+        pos++;
+        pointsElement.style.top = `${parseInt(pointsElement.style.top) - 1}px`;
+        pointsElement.style.opacity = `${1 - pos / 100}`;
+
+        if (pos < 100) {
+          requestAnimationFrame(animate);
+        } else {
+          pointsElement.remove();
+        }
+      };
+      requestAnimationFrame(animate);
+
       cat.remove();
     });
 
