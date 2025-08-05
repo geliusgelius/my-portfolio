@@ -32,20 +32,21 @@
     align-items: center;
     gap: 5px;
     transition: all 0.3s ease;
-    color: rgba($light, 0.8); 
+    color: rgba($light, 0.8);
     font-size: 0.9rem;
-    border: 1px solid rgba($primary, 0.2); 
+    border: 1px solid rgba($primary, 0.2);
 
     &.active {
       background: linear-gradient(135deg, $primary, $secondary);
       color: white;
-      border-color: transparent; 
-      box-shadow: 0 2px 8px rgba($primary, 0.3); 
+      border-color: transparent;
+      box-shadow: 0 2px 8px rgba($primary, 0.3);
+    }
 
     &:hover:not(.active) {
       background: rgba($primary, 0.2);
-      color: $light; 
-      border-color: rgba($primary, 0.4); 
+      color: $light;
+      border-color: rgba($primary, 0.4);
     }
 
     .language-flag {
@@ -55,7 +56,7 @@
     }
 
     &:hover .language-flag {
-      opacity: 1; 
+      opacity: 1;
     }
   }
 
