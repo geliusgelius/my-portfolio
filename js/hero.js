@@ -31,3 +31,25 @@ document.addEventListener("DOMContentLoaded", () => {
     mouseY = e.clientY;
   });
 });
+
+document
+  .querySelector(".hero__image")
+  .addEventListener("mouseenter", function () {
+    const logos = document.querySelectorAll(".tech-logo");
+    logos.forEach((logo, index) => {
+      setTimeout(() => {
+        logo.style.opacity = "1";
+        logo.style.transform = "scale(1)";
+      }, index * 100);
+    });
+  });
+
+document
+  .querySelector(".hero__image")
+  .addEventListener("mouseleave", function () {
+    const logos = document.querySelectorAll(".tech-logo");
+    logos.forEach((logo) => {
+      logo.style.opacity = "0";
+      logo.style.transform = "scale(0.5)";
+    });
+  });

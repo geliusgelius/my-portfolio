@@ -8,7 +8,131 @@
   padding: 20px;
   position: relative;
   overflow: hidden;
+  &__image-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+  }
 
+  &__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25),
+      0 0 0 12px rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    z-index: 2;
+
+    &:hover {
+      transform: scale(1.08);
+      border-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35),
+        0 0 0 12px rgba(255, 255, 255, 0.2);
+
+      ~ .tech-orbits .tech-logo {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+  .tech-orbits {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+
+    &--inner {
+      width: 280px;
+      height: 280px;
+      animation: rotate 20s linear infinite;
+    }
+
+    &--outer {
+      width: 350px;
+      height: 350px;
+      animation: rotate-reverse 25s linear infinite;
+    }
+  }
+
+  .tech-logo {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+
+    &[data-tech="html"] {
+      background: rgba(#e44d26, 0.8);
+      color: white;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &[data-tech="css"] {
+      background: rgba(#2965f1, 0.8);
+      color: white;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &[data-tech="js"] {
+      background: rgba(#f0db4f, 0.8);
+      color: #323330;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &[data-tech="react"] {
+      background: rgba(#61dafb, 0.8);
+      color: #20232a;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  @keyframes rotate-reverse {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
   // Основной фон с текстурой
   background: 
     // Розовый градиент
