@@ -44,40 +44,43 @@
 
       <!-- Главный экран -->
       <section id="home" class="hero">
-          <div class="hero__animations">
+  <div class="hero__animations">
     <div class="hero__circles"></div>
     <div class="hero__particles">
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-</div>
-  </div>
-        <div class="hero__content">
-          <img
-            src="assets/images/avatar.jpg"
-            alt="Моё фото"
-            class="hero__image"
-            data-i18n="hero.image_alt"
-          />
-
-<div class="hero__birthdate">
-    <div class="hero__birthdate-container">
-      <div class="hero__birthdate-front">📅</div>
-      <div class="hero__birthdate-back">03.09.1998</div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
     </div>
   </div>
+  <div class="hero__content">
+    <img
+      src="assets/images/avatar.jpg"
+      alt="Моё фото"
+      class="hero__image"
+      data-i18n="hero.image_alt"
+    />
 
+    <div class="hero__birthdate">
+      <div class="hero__birthdate-container">
+        <div class="hero__birthdate-front">📅</div>
+        <div class="hero__birthdate-back">03.09.1998</div>
+      </div>
+    </div>
 
-          <h1 class="hero__title">Ангелина Смирнова</h1>
-          <p class="hero__subtitle" data-i18n="hero.subtitle">Frontend Developer</p>
-          <div class="hero__social">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-telegram"></i></a>
-          </div>
-        </div>
-      </section>
+    <h1 class="hero__title">Ангелина Смирнова</h1>
+    <p class="hero__subtitle" data-i18n="hero.subtitle">Frontend Developer</p>
+    <div class="hero__social">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+    </div>
+  </div>
+</section>
 
       <!-- Обо мне -->
       <section id="about" class="about">
@@ -479,6 +482,34 @@
         </div>
       </section>
 
+      <footer class="footer">
+  <div class="footer__content">
+    <!-- Декоративные волны -->
+    <div class="footer__waves">
+      <div class="wave wave-1"></div>
+      <div class="wave wave-2"></div>
+      <div class="wave wave-3"></div>
+    </div>
+    
+    <!-- Основное содержимое -->
+    <div class="footer__main">
+      <!-- Логотип и копирайт -->
+      <div class="footer__copyright">
+        <div class="footer__logo">
+          <span>A</span>
+          <span>S</span>
+        </div>
+        <p>&copy; <span id="current-year"></span> <span data-i18n="footer.copyright">Make by Angelina Smirnova with love ♥</span></p>
+      </div>
+    </div>
+    
+    <!-- Кнопка "Наверх" -->
+    <button class="footer__to-top" aria-label="Наверх">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </div>
+</footer>
+
     <script src="js/main.js"></script>
     <script src="js/game.js"></script>
     <script src="js/about.js"></script>
@@ -488,6 +519,7 @@
     <script src="js/easter-egg.js" defer></script>
     <script type="module" src="js/translations.js"></script>
     <script type="module" src="js/language.js"></script>
+    <script src="js/footer.js"></script>
     
   </body>
 </html>
