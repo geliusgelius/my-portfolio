@@ -1,8 +1,6 @@
-// js/hero.js
 document.addEventListener("DOMContentLoaded", () => {
   const hero = document.querySelector(".hero");
 
-  // Создаем элемент для эффекта курсора
   const cursor = document.createElement("div");
   cursor.classList.add("hero__cursor-track");
   hero.appendChild(cursor);

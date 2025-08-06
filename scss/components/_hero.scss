@@ -40,7 +40,6 @@
     }
   }
 
-  // Orbit container
   .tech-orbits {
     position: absolute;
     top: 0;
@@ -50,7 +49,6 @@
     pointer-events: none;
   }
 
-  // Orbit paths
   .orbit {
     position: absolute;
     top: 50%;
@@ -70,17 +68,16 @@
     }
   }
 
-  // Основной фон с текстурой
-  background: 
-    // Розовый градиент
-    linear-gradient(135deg, rgba(255, 182, 193, 0.9), rgba(255, 105, 180, 0.8)),
-    // Текстурный слой
+  background: linear-gradient(
+      135deg,
+      rgba(255, 182, 193, 0.9),
+      rgba(255, 105, 180, 0.8)
+    ),
     url("../assets/images/bg-texture.png") repeat;
 
-  // Настройки текстуры
-  background-size: auto, 480px 480px; // Мелкий повторяющийся узор
+  background-size: auto, 480px 480px;
   background-blend-mode: hard-light;
-  background-attachment: fixed; // Для параллакс-эффекта
+  background-attachment: fixed;
 
   &__content {
     text-align: center;
@@ -186,7 +183,7 @@
 
   &__birthdate {
     position: absolute;
-    bottom: -40px; // Размещаем на 25px ниже нижнего края фото
+    bottom: -40px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
@@ -240,7 +237,6 @@
     }
   }
 
-  // Декоративные элементы
   &::before {
     content: "";
     position: absolute;
@@ -274,9 +270,6 @@
   }
 }
 
-// Анимации
-
-// Адаптивность
 @media (max-width: 768px) {
   .hero {
     background-attachment: scroll;

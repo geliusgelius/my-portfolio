@@ -1,4 +1,3 @@
-/* Стили для секретной кнопки */
 .secret-trigger {
   text-align: center;
   padding: 40px 0;
@@ -82,7 +81,6 @@
   }
 }
 
-/* Стили для модального окна игры */
 .easter-egg {
   position: fixed;
   top: 0;
@@ -196,7 +194,6 @@
   color: $accent;
 }
 
-/* Стили для окна результатов */
 .game-result {
   position: absolute;
   top: 50%;
@@ -238,7 +235,6 @@
   }
 }
 
-/* Стили для котиков */
 .cat {
   position: absolute;
   width: 60px;
@@ -308,7 +304,6 @@
   }
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
   .easter-egg {
     &__container {

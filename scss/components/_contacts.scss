@@ -171,7 +171,6 @@
   }
 
   &__item:hover &__icon-wrapper {
-    // Индивидуальные тени при наведении
     &:nth-child(1) {
       box-shadow: 0 15px 30px rgba(0, 168, 255, 0.4);
     }
@@ -292,7 +291,6 @@
     opacity: 1;
   }
 
-  // Анимации
   @keyframes pulse {
     0%,
     100% {

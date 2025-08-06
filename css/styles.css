@@ -1367,7 +1367,6 @@ button,
   }
 }
 
-/* Стили для секретной кнопки */
 .secret-trigger {
   text-align: center;
   padding: 40px 0;
@@ -1439,7 +1438,6 @@ button,
   transition: transform 0.3s ease;
 }
 
-/* Стили для модального окна игры */
 .easter-egg {
   position: fixed;
   top: 0;
@@ -1543,7 +1541,6 @@ button,
   color: #ff1493;
 }
 
-/* Стили для окна результатов */
 .game-result {
   position: absolute;
   top: 50%;
@@ -1582,7 +1579,6 @@ button,
   margin-top: 20px;
 }
 
-/* Стили для котиков */
 .cat {
   position: absolute;
   width: 60px;
@@ -1643,7 +1639,6 @@ button,
     opacity: 0;
   }
 }
-/* Адаптивность */
 @media (max-width: 768px) {
   .easter-egg__container {
     padding: 30px 20px;

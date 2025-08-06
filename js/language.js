@@ -153,7 +153,6 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.addEventListener("click", () => this.setLanguage(btn.dataset.lang));
       });
 
-      // Добавляем кнопку "Копировать email"
       this.copyEmailBtn = document.querySelector(".copy-email");
       if (this.copyEmailBtn) {
         this.copyEmailBtn.addEventListener("click", this.copyEmail.bind(this));
@@ -161,7 +160,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     initServiceWorker() {
-      // Регистрация Service Worker для оффлайн-работы
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
           .register("/sw.js")
@@ -171,7 +169,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     addDynamicContentHandlers() {
-      // Обработка многострочного текста
       document.querySelectorAll("[data-multiline]").forEach((el) => {
         const key = el.getAttribute("data-i18n");
         if (translations[this.currentLang]?.[key]) {
@@ -184,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     copyEmail() {
-      const email = "your.email@example.com"; // Замените на реальный email
+      const email = "angelina68tmb@gmail.com";
       navigator.clipboard.writeText(email).then(() => {
         const copiedText =
           translations[this.currentLang]["contacts.email.copied"];
@@ -214,7 +211,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     updateMetaTags(lang) {
-      // Обновляем мета-теги для SEO
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc) {
         metaDesc.content =
@@ -229,12 +225,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const translation = translations[this.currentLang]?.[key];
 
         if (translation) {
-          // Для элементов с атрибутом data-multiline сохраняем переносы строк
           if (el.hasAttribute("data-multiline")) {
             el.innerHTML = translation.replace(/\n/g, "<br>");
-          }
-          // Стандартная обработка для других элементов
-          else if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+          } else if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
             el.value = translation;
           } else if (el.hasAttribute("placeholder")) {
             el.setAttribute("placeholder", translation);
@@ -248,7 +241,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Инициализация анимаций при загрузке
   function initAnimations() {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -266,11 +258,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Запускаем все
   new LanguageSwitcher();
   initAnimations();
 
-  // Добавляем обработчик для Easter Egg
   const secretElement = document.querySelector(".secret-element");
   if (secretElement) {
     secretElement.addEventListener("click", () => {
