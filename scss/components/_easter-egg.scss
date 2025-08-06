@@ -4,6 +4,7 @@
   padding: 40px 0;
   position: relative;
   transition: opacity 0.5s ease;
+  font-family: $font-main;
 
   &__wrapper {
     display: inline-block;
@@ -30,6 +31,9 @@
     box-shadow: 0 5px 15px rgba($primary, 0.3);
     transition: all 0.3s ease;
     z-index: 1;
+    font-family: $font-title;
+    font-weight: $font-medium;
+    letter-spacing: 0.5px;
 
     &:hover {
       transform: translateY(-3px);
@@ -61,6 +65,7 @@
 
   &__text {
     position: relative;
+    font-weight: $font-medium;
 
     &::after {
       content: "";
@@ -91,6 +96,7 @@
   justify-content: center;
   opacity: 0;
   transition: opacity 0.5s ease;
+  font-family: $font-main;
 
   &__container {
     background: white;
@@ -112,6 +118,7 @@
     font-size: 1.5rem;
     cursor: pointer;
     transition: transform 0.3s ease;
+    font-weight: $font-bold;
 
     &:hover {
       transform: rotate(90deg);
@@ -123,6 +130,9 @@
     color: $primary;
     margin-bottom: 20px;
     text-align: center;
+    font-family: $font-title;
+    font-weight: $font-bold;
+    letter-spacing: 0.5px;
   }
 
   &__score,
@@ -131,9 +141,10 @@
     color: $dark;
     margin-bottom: 15px;
     text-align: center;
+    font-weight: $font-medium;
 
     span {
-      font-weight: bold;
+      font-weight: $font-bold;
       color: $secondary;
     }
   }
@@ -161,6 +172,9 @@
     display: block;
     margin: 0 auto;
     box-shadow: 0 5px 15px rgba($primary, 0.3);
+    font-family: $font-title;
+    font-weight: $font-semibold;
+    letter-spacing: 0.5px;
 
     &:hover {
       transform: translateY(-3px);
@@ -176,6 +190,10 @@
   animation: float-up 1s ease-out forwards;
   user-select: none;
   pointer-events: none;
+  font-family: $font-title;
+  font-weight: $font-bold;
+  font-size: 1.5rem;
+  color: $accent;
 }
 
 /* Стили для окна результатов */
@@ -193,23 +211,26 @@
   text-align: center;
   z-index: 20;
   border: 2px solid $primary;
+  font-family: $font-main;
 
   h3 {
     color: darken($primary, 20%);
     font-size: 1.8rem;
     margin-bottom: 15px;
-    font-weight: 700;
+    font-weight: $font-bold;
+    font-family: $font-title;
+    letter-spacing: 0.5px;
   }
 
   p {
-    color: $dark; /* Темный текст */
+    color: $dark;
     font-size: 1.2rem;
     margin: 10px 0;
     line-height: 1.5;
-    font-weight: 500;
+    font-weight: $font-medium;
 
     &:last-child {
-      font-weight: 700;
+      font-weight: $font-bold;
       color: darken($secondary, 15%);
       font-size: 1.3rem;
       margin-top: 20px;
@@ -294,8 +315,31 @@
       padding: 30px 20px;
     }
 
+    &__title {
+      font-size: 1.7rem;
+    }
+
+    &__score,
+    &__timer {
+      font-size: 1.1rem;
+    }
+
     &__game-area {
       height: 300px;
+    }
+  }
+
+  .game-result {
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+
+      &:last-child {
+        font-size: 1.1rem;
+      }
     }
   }
 }

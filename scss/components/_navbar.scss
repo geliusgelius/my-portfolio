@@ -11,6 +11,7 @@
   flex-direction: column;
   justify-content: center;
   backdrop-filter: blur(10px);
+  font-family: $font-main;
 
   &__language {
     display: flex;
@@ -27,7 +28,7 @@
     padding: 6px 12px;
     border-radius: 15px;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: $font-medium;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -35,12 +36,14 @@
     color: rgba($light, 0.8);
     font-size: 0.9rem;
     border: 1px solid rgba($primary, 0.2);
+    letter-spacing: 0.3px;
 
     &.active {
       background: linear-gradient(135deg, $primary, $secondary);
       color: white;
       border-color: transparent;
       box-shadow: 0 2px 8px rgba($primary, 0.3);
+      font-weight: $font-semibold;
     }
 
     &:hover:not(.active) {
@@ -83,6 +86,7 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    font-family: $font-main;
 
     &:hover {
       background: $accent;
@@ -143,21 +147,45 @@
       display: block;
       transition: all 0.3s ease;
       border-radius: 5px;
+      font-weight: $font-medium;
+      letter-spacing: 0.5px;
 
       &:hover {
         background: rgba($primary, 0.3);
         transform: translateX(10px);
+        color: white;
       }
 
       &.active {
         background: rgba($primary, 0.2);
         color: $light;
-        font-weight: bold;
+        font-weight: $font-semibold;
         &::after {
           content: "→";
           margin-left: 10px;
+          font-weight: $font-bold;
         }
       }
+    }
+  }
+
+  // Адаптивность
+  @media (max-width: 480px) {
+    width: 220px;
+    left: -220px;
+
+    &__menu {
+      padding: 15px;
+
+      a {
+        font-size: 1rem;
+        padding: 8px 12px;
+      }
+    }
+
+    .language-btn {
+      font-size: 0.85rem;
+      padding: 5px 10px;
     }
   }
 }

@@ -3,6 +3,7 @@
   padding: 100px 20px;
   background: linear-gradient(to bottom, $light, lighten($primary, 40%));
   position: relative;
+  font-family: $font-main;
 
   &__header {
     text-align: center;
@@ -13,6 +14,9 @@
       color: $dark;
       position: relative;
       display: inline-block;
+      font-family: $font-title;
+      font-weight: $font-bold;
+      letter-spacing: 0.5px;
 
       &::after {
         content: "";
@@ -40,10 +44,11 @@
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 10px 30px rgba($dark, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
       transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba($dark, 0.15);
     }
 
     h3 {
@@ -53,6 +58,8 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      font-weight: $font-semibold;
+      letter-spacing: 0.3px;
 
       i {
         color: $primary;
@@ -73,8 +80,16 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
-    font-weight: 600;
+    font-weight: $font-semibold;
     color: $text-dark;
+    font-size: 1rem;
+    letter-spacing: 0.2px;
+  }
+
+  &__percentage {
+    color: $primary;
+    font-weight: $font-bold;
+    font-size: 0.9rem;
   }
 
   &__progress {
@@ -88,18 +103,51 @@
       background: linear-gradient(90deg, $primary, $secondary);
       border-radius: 4px;
       transition: width 1.5s ease-out;
+      box-shadow: 0 2px 5px rgba($primary, 0.2);
     }
   }
 
+  // Адаптивность
   @media (max-width: 768px) {
     padding: 70px 20px;
 
     &__header h2 {
       font-size: 2.3rem;
+      letter-spacing: 0.3px;
     }
 
     &__categories {
       grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    &__category {
+      padding: 25px;
+
+      h3 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 50px 15px;
+
+    &__header h2 {
+      font-size: 2rem;
+    }
+
+    &__category {
+      padding: 20px;
+
+      h3 {
+        font-size: 1.3rem;
+      }
+    }
+
+    &__label {
+      font-size: 0.95rem;
     }
   }
 }

@@ -4,6 +4,8 @@
   background-color: $dark;
   color: white;
   text-align: center;
+  font-family: $font-main;
+  font-weight: $font-regular;
 
   &__header {
     margin-bottom: 60px;
@@ -13,6 +15,9 @@
       color: white;
       position: relative;
       display: inline-block;
+      font-family: $font-title;
+      font-weight: $font-bold;
+      letter-spacing: 0.5px;
 
       &::after {
         content: "";
@@ -31,6 +36,8 @@
       margin: 20px auto 0;
       color: rgba(white, 0.8);
       line-height: 1.6;
+      font-weight: $font-light;
+      font-size: 1.1rem;
     }
   }
 
@@ -181,15 +188,17 @@
 
   &__label {
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: $font-medium;
     transition: all 0.3s ease;
     transform: translateZ(0);
     display: inline-block;
+    letter-spacing: 0.3px;
   }
 
   &__item:hover &__label {
     color: $primary;
     transform: translateZ(20px);
+    font-weight: $font-semibold;
   }
 
   &__online-dot {
@@ -209,6 +218,7 @@
     font-size: 0.8em;
     color: #4caf50;
     margin-left: 5px;
+    font-weight: $font-medium;
   }
 
   &__email {
@@ -218,11 +228,12 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    font-weight: $font-medium;
 
     a {
       color: $primary;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: $font-semibold;
       transition: all 0.3s ease;
 
       &:hover {
@@ -240,6 +251,8 @@
     transition: color 0.3s ease;
     padding: 5px;
     font-size: 1rem;
+    font-family: $font-main;
+    font-weight: $font-regular;
 
     &:hover {
       color: $primary;
@@ -259,6 +272,7 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     white-space: nowrap;
+    font-weight: $font-medium;
 
     &::before {
       content: "";
@@ -334,6 +348,10 @@
     &__icon-wrapper {
       width: 60px;
       height: 60px;
+    }
+
+    &__header p {
+      font-size: 1rem;
     }
   }
 }

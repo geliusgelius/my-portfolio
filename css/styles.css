@@ -84,6 +84,7 @@ button,
   align-items: center;
   z-index: 9999;
   transition: opacity 0.5s ease;
+  font-family: "Montserrat", sans-serif;
 }
 .loader__spinner {
   width: 50px;
@@ -97,11 +98,43 @@ button,
 .loader__text {
   color: #fff0f5;
   font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.loader__progress {
+  margin-top: 15px;
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 240, 245, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.loader__progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff69b4, #ffb6c1);
+  width: 0%;
+  transition: width 0.3s ease;
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+@media (max-width: 768px) {
+  .loader__spinner {
+    width: 40px;
+    height: 40px;
+    border-width: 4px;
+    margin-bottom: 15px;
+  }
+  .loader__text {
+    font-size: 1rem;
+  }
+  .loader__progress {
+    width: 150px;
   }
 }
 .navbar {
@@ -117,6 +150,7 @@ button,
   flex-direction: column;
   justify-content: center;
   backdrop-filter: blur(10px);
+  font-family: "Montserrat", sans-serif;
 }
 .navbar__language {
   display: flex;
@@ -140,12 +174,14 @@ button,
   color: rgba(255, 240, 245, 0.8);
   font-size: 0.9rem;
   border: 1px solid rgba(255, 105, 180, 0.2);
+  letter-spacing: 0.3px;
 }
 .navbar .language-btn.active {
   background: linear-gradient(135deg, #ff69b4, #ffb6c1);
   color: white;
   border-color: transparent;
   box-shadow: 0 2px 8px rgba(255, 105, 180, 0.3);
+  font-weight: 600;
 }
 .navbar .language-btn:hover:not(.active) {
   background: rgba(255, 105, 180, 0.2);
@@ -182,6 +218,7 @@ button,
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  font-family: "Montserrat", sans-serif;
 }
 .navbar__toggle:hover {
   background: #ff1493;
@@ -234,19 +271,40 @@ button,
   display: block;
   transition: all 0.3s ease;
   border-radius: 5px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 .navbar__menu a:hover {
   background: rgba(255, 105, 180, 0.3);
   transform: translateX(10px);
+  color: white;
 }
 .navbar__menu a.active {
   background: rgba(255, 105, 180, 0.2);
   color: #fff0f5;
-  font-weight: bold;
+  font-weight: 600;
 }
 .navbar__menu a.active::after {
   content: "→";
   margin-left: 10px;
+  font-weight: 700;
+}
+@media (max-width: 480px) {
+  .navbar {
+    width: 220px;
+    left: -220px;
+  }
+  .navbar__menu {
+    padding: 15px;
+  }
+  .navbar__menu a {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+  .navbar .language-btn {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
 }
 
 .hero {
@@ -257,6 +315,7 @@ button,
   padding: 20px;
   position: relative;
   overflow: hidden;
+  font-family: "Montserrat", sans-serif;
   background: linear-gradient(135deg, rgba(255, 182, 193, 0.9), rgba(255, 105, 180, 0.8)), url("../assets/images/bg-texture.png") repeat;
   background-size: auto, 480px 480px;
   background-blend-mode: hard-light;
@@ -350,6 +409,7 @@ button,
   margin-bottom: 15px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.3);
   font-weight: 700;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 1.5px;
   position: relative;
   z-index: 2;
@@ -359,6 +419,7 @@ button,
   color: rgba(255, 255, 255, 0.95);
   margin-bottom: 35px;
   font-weight: 300;
+  font-family: "Montserrat", sans-serif;
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
@@ -366,6 +427,7 @@ button,
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 2;
+  letter-spacing: 0.5px;
 }
 .hero__social {
   display: flex;
@@ -422,12 +484,13 @@ button,
   justify-content: center;
   border-radius: 50%;
   transition: transform 0.6s ease;
-  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
 }
 .hero__birthdate-front {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(5px);
   font-size: 24px;
+  font-weight: 700;
 }
 .hero__birthdate-back {
   background: rgba(255, 105, 180, 0.7);
@@ -438,6 +501,7 @@ button,
   box-sizing: border-box;
   text-align: center;
   line-height: 1.2;
+  font-weight: 500;
 }
 .hero__birthdate:hover .hero__birthdate-front {
   transform: rotateY(180deg);
@@ -486,10 +550,12 @@ button,
   }
   .hero__title {
     font-size: 2.4rem;
+    letter-spacing: 1px;
   }
   .hero__subtitle {
     font-size: 1.3rem;
     line-height: 1.6;
+    letter-spacing: 0.3px;
   }
   .hero__image {
     width: 180px;
@@ -498,6 +564,7 @@ button,
   .hero__social a {
     width: 50px;
     height: 50px;
+    font-size: 1.6rem;
   }
   .hero__birthdate {
     bottom: -20px;
@@ -506,7 +573,7 @@ button,
     width: 50px;
     height: 50px;
   }
-  .hero__birthdate-front, .hero__birthdate-back {
+  .hero__birthdate-front {
     font-size: 20px;
   }
   .hero__birthdate-back {
@@ -514,110 +581,181 @@ button,
   }
 }
 .about {
-  padding: 80px 20px;
+  padding: 100px 20px;
   position: relative;
   background: #fff0f5;
   color: #5a2d40;
   font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+}
+.about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/images/bg-pattern-light.png") repeat;
+  opacity: 0.05;
+  z-index: 0;
 }
 .about__content {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 60px;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 .about__text h2 {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: #8b3a62;
   margin-bottom: 30px;
   position: relative;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
 }
 .about__text h2::after {
   content: "";
   display: block;
   width: 80px;
   height: 4px;
-  background: #ff69b4;
+  background: linear-gradient(90deg, #ff69b4, #ffb6c1);
   margin-top: 15px;
+  border-radius: 2px;
 }
 .about__text p {
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.8;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  letter-spacing: 0.2px;
+}
+.about__highlight {
+  color: #ff69b4;
+  font-weight: 500;
 }
 .about__skills {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 25px;
 }
 .about__skill-item {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 25px;
+  border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid rgba(255, 105, 180, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 .about__skill-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(139, 58, 98, 0.1);
+  border-color: rgba(255, 105, 180, 0.2);
+}
+.about__skill-item:hover::before {
+  opacity: 1;
+}
+.about__skill-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ff69b4, #ffb6c1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 .about__skill-item h3 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   color: #ff69b4;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  font-size: 1.3rem;
+  letter-spacing: 0.3px;
 }
 .about__skill-item h3 i {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  transition: transform 0.3s ease;
 }
 .about__skill-item p {
   font-weight: 400;
+  color: #5a2d40;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+.about__skill-item:hover h3 i {
+  transform: scale(1.1);
 }
 .about__content {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 .about__content.visible {
   opacity: 1;
   transform: translateY(0);
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .about {
+    padding: 80px 20px;
+  }
+  .about__content {
+    gap: 40px;
+  }
+  .about__text h2 {
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 768px) {
   .about__content {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
   .about__skills {
     margin-top: 40px;
+    grid-template-columns: repeat(2, 1fr);
   }
   .about__text h2 {
     font-size: 2.2rem;
+    text-align: center;
+  }
+  .about__text h2::after {
+    margin: 15px auto 0;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .about {
     padding: 60px 15px;
   }
   .about__skills {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
   .about__text h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    margin-bottom: 25px;
   }
   .about__text p {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    margin-bottom: 20px;
   }
   .about__skill-item {
-    padding: 15px;
+    padding: 20px;
   }
   .about__skill-item h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
   }
 }
 
@@ -625,6 +763,7 @@ button,
   padding: 100px 20px;
   background: linear-gradient(to bottom, #fff0f5, white);
   position: relative;
+  font-family: "Montserrat", sans-serif;
 }
 .skills__header {
   text-align: center;
@@ -635,6 +774,9 @@ button,
   color: #8b3a62;
   position: relative;
   display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 .skills__header h2::after {
   content: "";
@@ -658,10 +800,11 @@ button,
   border-radius: 15px;
   padding: 30px;
   box-shadow: 0 10px 30px rgba(139, 58, 98, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .skills__category:hover {
   transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(139, 58, 98, 0.15);
 }
 .skills__category h3 {
   color: #8b3a62;
@@ -670,6 +813,8 @@ button,
   display: flex;
   align-items: center;
   gap: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 .skills__category h3 i {
   color: #ff69b4;
@@ -687,6 +832,13 @@ button,
   margin-bottom: 8px;
   font-weight: 600;
   color: #5a2d40;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+}
+.skills__percentage {
+  color: #ff69b4;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 .skills__progress {
   height: 8px;
@@ -699,6 +851,7 @@ button,
   background: linear-gradient(90deg, #ff69b4, #ffb6c1);
   border-radius: 4px;
   transition: width 1.5s ease-out;
+  box-shadow: 0 2px 5px rgba(255, 105, 180, 0.2);
 }
 @media (max-width: 768px) {
   .skills {
@@ -706,9 +859,35 @@ button,
   }
   .skills__header h2 {
     font-size: 2.3rem;
+    letter-spacing: 0.3px;
   }
   .skills__categories {
     grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .skills__category {
+    padding: 25px;
+  }
+  .skills__category h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .skills {
+    padding: 50px 15px;
+  }
+  .skills__header h2 {
+    font-size: 2rem;
+  }
+  .skills__category {
+    padding: 20px;
+  }
+  .skills__category h3 {
+    font-size: 1.3rem;
+  }
+  .skills__label {
+    font-size: 0.95rem;
   }
 }
 
@@ -716,6 +895,7 @@ button,
   padding: 100px 20px;
   background: linear-gradient(to bottom, white, white);
   position: relative;
+  font-family: "Montserrat", sans-serif;
 }
 .projects__header {
   text-align: center;
@@ -726,6 +906,9 @@ button,
   color: #8b3a62;
   position: relative;
   display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 .projects__header h2::after {
   content: "";
@@ -800,6 +983,7 @@ button,
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
+  letter-spacing: 0.3px;
 }
 .projects__info {
   padding: 25px;
@@ -808,11 +992,15 @@ button,
   font-size: 1.5rem;
   color: #8b3a62;
   margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 .projects__description {
   color: #5a2d40;
   line-height: 1.6;
   margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 1rem;
 }
 .projects__links {
   display: flex;
@@ -825,6 +1013,8 @@ button,
   color: #ff69b4;
   font-weight: 600;
   transition: color 0.3s ease;
+  letter-spacing: 0.3px;
+  font-size: 0.95rem;
 }
 .projects__links a:hover {
   color: #ffb6c1;
@@ -841,9 +1031,33 @@ button,
   }
   .projects__header h2 {
     font-size: 2.3rem;
+    letter-spacing: 0.3px;
   }
   .projects__grid {
     grid-template-columns: 1fr;
+  }
+  .projects__title {
+    font-size: 1.4rem;
+  }
+  .projects__description {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 480px) {
+  .projects {
+    padding: 50px 15px;
+  }
+  .projects__header h2 {
+    font-size: 2rem;
+  }
+  .projects__info {
+    padding: 20px;
+  }
+  .projects__title {
+    font-size: 1.3rem;
+  }
+  .projects__links a {
+    font-size: 0.9rem;
   }
 }
 
@@ -852,6 +1066,8 @@ button,
   background-color: #8b3a62;
   color: white;
   text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 .contacts__header {
   margin-bottom: 60px;
@@ -861,6 +1077,9 @@ button,
   color: white;
   position: relative;
   display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 .contacts__header h2::after {
   content: "";
@@ -877,6 +1096,8 @@ button,
   margin: 20px auto 0;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
+  font-weight: 300;
+  font-size: 1.1rem;
 }
 .contacts__items {
   display: flex;
@@ -1006,10 +1227,12 @@ button,
   transition: all 0.3s ease;
   transform: translateZ(0);
   display: inline-block;
+  letter-spacing: 0.3px;
 }
 .contacts__item:hover .contacts__label {
   color: #ff69b4;
   transform: translateZ(20px);
+  font-weight: 600;
 }
 .contacts__online-dot {
   position: absolute;
@@ -1027,6 +1250,7 @@ button,
   font-size: 0.8em;
   color: #4caf50;
   margin-left: 5px;
+  font-weight: 500;
 }
 .contacts__email {
   margin-top: 50px;
@@ -1035,6 +1259,7 @@ button,
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-weight: 500;
 }
 .contacts__email a {
   color: #ff69b4;
@@ -1054,6 +1279,8 @@ button,
   transition: color 0.3s ease;
   padding: 5px;
   font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 .contacts__copy-btn:hover {
   color: #ff69b4;
@@ -1071,6 +1298,7 @@ button,
   opacity: 0;
   transition: opacity 0.3s ease;
   white-space: nowrap;
+  font-weight: 500;
 }
 .contacts__copy-notification::before {
   content: "";
@@ -1134,6 +1362,9 @@ button,
     width: 60px;
     height: 60px;
   }
+  .contacts__header p {
+    font-size: 1rem;
+  }
 }
 
 /* Стили для секретной кнопки */
@@ -1142,6 +1373,7 @@ button,
   padding: 40px 0;
   position: relative;
   transition: opacity 0.5s ease;
+  font-family: "Montserrat", sans-serif;
 }
 .secret-trigger__wrapper {
   display: inline-block;
@@ -1163,6 +1395,9 @@ button,
   box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
   transition: all 0.3s ease;
   z-index: 1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 .secret-trigger__btn:hover {
   transform: translateY(-3px);
@@ -1189,6 +1424,7 @@ button,
 }
 .secret-trigger__text {
   position: relative;
+  font-weight: 500;
 }
 .secret-trigger__text::after {
   content: "";
@@ -1217,6 +1453,7 @@ button,
   justify-content: center;
   opacity: 0;
   transition: opacity 0.5s ease;
+  font-family: "Montserrat", sans-serif;
 }
 .easter-egg__container {
   background: white;
@@ -1237,6 +1474,7 @@ button,
   font-size: 1.5rem;
   cursor: pointer;
   transition: transform 0.3s ease;
+  font-weight: 700;
 }
 .easter-egg__close:hover {
   transform: rotate(90deg);
@@ -1246,15 +1484,19 @@ button,
   color: #ff69b4;
   margin-bottom: 20px;
   text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 .easter-egg__score, .easter-egg__timer {
   font-size: 1.3rem;
   color: #8b3a62;
   margin-bottom: 15px;
   text-align: center;
+  font-weight: 500;
 }
 .easter-egg__score span, .easter-egg__timer span {
-  font-weight: bold;
+  font-weight: 700;
   color: #ffb6c1;
 }
 .easter-egg__game-area {
@@ -1279,6 +1521,9 @@ button,
   display: block;
   margin: 0 auto;
   box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 .easter-egg__start-btn:hover {
   transform: translateY(-3px);
@@ -1292,6 +1537,10 @@ button,
   animation: float-up 1s ease-out forwards;
   user-select: none;
   pointer-events: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #ff1493;
 }
 
 /* Стили для окна результатов */
@@ -1309,15 +1558,18 @@ button,
   text-align: center;
   z-index: 20;
   border: 2px solid #ff69b4;
+  font-family: "Montserrat", sans-serif;
 }
 .game-result h3 {
   color: #ff0381;
   font-size: 1.8rem;
   margin-bottom: 15px;
   font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.5px;
 }
 .game-result p {
-  color: #8b3a62; /* Темный текст */
+  color: #8b3a62;
   font-size: 1.2rem;
   margin: 10px 0;
   line-height: 1.5;
@@ -1396,8 +1648,23 @@ button,
   .easter-egg__container {
     padding: 30px 20px;
   }
+  .easter-egg__title {
+    font-size: 1.7rem;
+  }
+  .easter-egg__score, .easter-egg__timer {
+    font-size: 1.1rem;
+  }
   .easter-egg__game-area {
     height: 300px;
+  }
+  .game-result h3 {
+    font-size: 1.5rem;
+  }
+  .game-result p {
+    font-size: 1rem;
+  }
+  .game-result p:last-child {
+    font-size: 1.1rem;
   }
 }
 .footer {
@@ -1408,6 +1675,8 @@ button,
   overflow: hidden;
   border-top: 1px solid rgba(255, 105, 180, 0.2);
   backdrop-filter: blur(10px);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
 }
 .footer::before {
   content: "";
@@ -1441,6 +1710,8 @@ button,
   opacity: 0.8;
   transition: opacity 0.3s ease;
   padding: 20px 0;
+  font-weight: 300;
+  letter-spacing: 0.3px;
 }
 .footer__copyright:hover {
   opacity: 1;
@@ -1461,6 +1732,7 @@ button,
   font-weight: 700;
   font-size: 1.2rem;
   box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+  font-family: "Montserrat", sans-serif;
 }
 .footer__logo span:first-child {
   transform: rotate(-5deg);
@@ -1500,13 +1772,9 @@ button,
 .footer__to-top:active {
   transform: translateY(2px);
 }
-.footer__waves {
-  position: absolute;
-  top: -50px;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  overflow: hidden;
+.footer__to-top i {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 .footer .wave {
   position: absolute;
@@ -1551,15 +1819,24 @@ button,
     flex-direction: column;
     text-align: center;
     gap: 10px;
+    font-size: 0.85rem;
   }
   .footer__logo {
     justify-content: center;
+  }
+  .footer__logo span {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
   }
   .footer__to-top {
     width: 45px;
     height: 45px;
     bottom: 20px;
     right: 20px;
+  }
+  .footer__to-top i {
+    font-size: 1.1rem;
   }
 }
 

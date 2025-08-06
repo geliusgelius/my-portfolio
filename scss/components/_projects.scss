@@ -3,6 +3,7 @@
   padding: 100px 20px;
   background: linear-gradient(to bottom, lighten($primary, 42%), white);
   position: relative;
+  font-family: $font-main;
 
   &__header {
     text-align: center;
@@ -13,6 +14,9 @@
       color: $dark;
       position: relative;
       display: inline-block;
+      font-family: $font-title;
+      font-weight: $font-bold;
+      letter-spacing: 0.5px;
 
       &::after {
         content: "";
@@ -97,7 +101,8 @@
       padding: 5px 12px;
       border-radius: 20px;
       font-size: 0.8rem;
-      font-weight: 600;
+      font-weight: $font-semibold;
+      letter-spacing: 0.3px;
     }
   }
 
@@ -109,12 +114,16 @@
     font-size: 1.5rem;
     color: $dark;
     margin-bottom: 10px;
+    font-weight: $font-semibold;
+    letter-spacing: 0.3px;
   }
 
   &__description {
     color: $text-dark;
     line-height: 1.6;
     margin-bottom: 20px;
+    font-weight: $font-regular;
+    font-size: 1rem;
   }
 
   &__links {
@@ -126,8 +135,10 @@
       align-items: center;
       gap: 8px;
       color: $primary;
-      font-weight: 600;
+      font-weight: $font-semibold;
       transition: color 0.3s ease;
+      letter-spacing: 0.3px;
+      font-size: 0.95rem;
 
       &:hover {
         color: $secondary;
@@ -148,10 +159,39 @@
 
     &__header h2 {
       font-size: 2.3rem;
+      letter-spacing: 0.3px;
     }
 
     &__grid {
       grid-template-columns: 1fr;
+    }
+
+    &__title {
+      font-size: 1.4rem;
+    }
+
+    &__description {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 50px 15px;
+
+    &__header h2 {
+      font-size: 2rem;
+    }
+
+    &__info {
+      padding: 20px;
+    }
+
+    &__title {
+      font-size: 1.3rem;
+    }
+
+    &__links a {
+      font-size: 0.9rem;
     }
   }
 }

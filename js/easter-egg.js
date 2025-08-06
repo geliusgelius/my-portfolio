@@ -22,30 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let timerInterval;
   let isGameRunning = false;
 
-  // Звуковые эффекты
-  const sounds = {
-    meow: new Audio(
-      "https://assets.mixkit.co/sfx/preview/mixkit-cat-meow-117.mp3"
-    ),
-    gold: new Audio(
-      "https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3"
-    ),
-    end: new Audio(
-      "https://assets.mixkit.co/sfx/preview/mixkit-game-level-completed-2059.mp3"
-    ),
-    open: new Audio(
-      "https://assets.mixkit.co/sfx/preview/mixkit-positive-interface-beep-221.mp3"
-    ),
-  };
-
-  // Настройка звуков
-  Object.values(sounds).forEach((sound) => {
-    sound.volume = 0.6;
-  });
-
   // ========== Функции интерфейса ========== //
   function showGame() {
-    sounds.open.play().catch(console.error);
     gameSection.style.display = "flex";
     setTimeout(() => (gameSection.style.opacity = "1"), 10);
     document.body.style.overflow = "hidden";
@@ -84,8 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const points = isGolden ? 5 : 1;
       score += points;
       scoreDisplay.textContent = score;
-
-      (isGolden ? sounds.gold : sounds.meow).play().catch(console.error);
 
       // Создаем элемент с анимацией
       const pointsElement = document.createElement("div");
@@ -140,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scoreDisplay.textContent = "0";
     timerDisplay.textContent = "30";
     startBtn.disabled = true;
-    startBtn.textContent = "Игра идет...";
+    startBtn.textContent = "Игра продолжается...";
     gameArea.innerHTML = "";
 
     timerInterval = setInterval(() => {
@@ -158,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
     isGameRunning = false;
     startBtn.disabled = false;
     startBtn.textContent = "Играть снова";
-    sounds.end.play().catch(console.error);
 
     const result = document.createElement("div");
     result.className = "game-result";
@@ -209,7 +184,6 @@ document.addEventListener("DOMContentLoaded", () => {
   secretBtn.addEventListener("click", () => {
     document.querySelector(".secret-trigger").style.opacity = "0";
     showGame();
-    triggerConfetti();
   });
 
   closeBtn.addEventListener("click", hideGame);
