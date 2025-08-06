@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "loader.text": "Loading...",
       "about.title": "About Me",
       "about.text1":
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum voluptatibus nemo aut cum provident reiciendis excepturi velit impedit laboriosam. Maiores consectetur rerum ducimus nam consequuntur provident nemo unde exercitationem.",
-      "about.text2":
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veritatis a doloribus eligendi perferendis officia, accusantium impedit consequatur architecto sequi voluptatum eos maxime minus sapiente voluptate recusandae at ab aut!",
+        "A frontend developer for whom code is creativity with clear rules. I love the moment when, after hours of working in the editor, the perfect interface comes to life on the screen: beautiful, logical and `lively`",
+      "about.text2": `— Developed an online store from scratch: from pixel-perfect layout to shopping cart logic \n
+         — Created a website for the university (a graduation project) with adaptive design and interactive elements  \n
+         — Designed dozens of landing pages, honing her attention to detail`,
       "about.skills.development.title": "Development",
       "about.skills.development.text":
         "Creating responsive and accessible web applications using modern technologies",
@@ -75,9 +76,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "loader.text": "Загрузка...",
       "about.title": "Обо мне",
       "about.text1":
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, voluptatum voluptatibus nemo aut cum provident reiciendis excepturi velit impedit laboriosam. Maiores consectetur rerum ducimus nam consequuntur provident nemo unde exercitationem.",
-      "about.text2":
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo veritatis a doloribus eligendi perferendis officia, accusantium impedit consequatur architecto sequi voluptatum eos maxime minus sapiente voluptate recusandae at ab aut!",
+        "Фронтенд-разработчик, для которого код — это творчество с чёткими правилами. Обожаю момент, когда после часов работы в редакторе на экране оживает идеальный интерфейс: красивый, логичный и «живой».",
+      "about.text2": `— Разработала интернет-магазин с нуля: от pixel-perfect вёрстки до логики корзины \n
+         — Создала сайт для университета (дипломный проект) с адаптивным дизайном и интерактивными элементами \n
+         — Верстала десятки лендингов, оттачивая внимание к деталям`,
       "about.skills.development.title": "Разработка",
       "about.skills.development.text":
         "Создание адаптивных и доступных веб-приложений на современных технологиях",
@@ -123,15 +125,26 @@ document.addEventListener("DOMContentLoaded", function () {
       "easter_egg.time_prefix": "Время:",
       "easter_egg.seconds": "с",
       "easter_egg.start_button": "Начать игру",
-      "footer.copyright": "Сделано Ангелиной Смирновой с любовью ❤️",
+      "footer.copyright": "Сделала Ангелина Смирнова с любовью ❤️",
     },
   };
 
   class LanguageSwitcher {
     constructor() {
-      this.currentLang = localStorage.getItem("language") || "ru";
+      this.currentLang = this.getSavedLanguage();
       this.initElements();
+      this.initServiceWorker();
       this.setLanguage(this.currentLang);
+      this.addDynamicContentHandlers();
+    }
+
+    getSavedLanguage() {
+      // Проверяем предпочтения браузера, если язык не сохранен
+      const savedLang = localStorage.getItem("language");
+      if (savedLang) return savedLang;
+
+      const browserLang = navigator.language.split("-")[0];
+      return translations[browserLang] ? browserLang : "ru";
     }
 
     initElements() {
@@ -139,32 +152,129 @@ document.addEventListener("DOMContentLoaded", function () {
       this.languageBtns.forEach((btn) => {
         btn.addEventListener("click", () => this.setLanguage(btn.dataset.lang));
       });
+
+      // Добавляем кнопку "Копировать email"
+      this.copyEmailBtn = document.querySelector(".copy-email");
+      if (this.copyEmailBtn) {
+        this.copyEmailBtn.addEventListener("click", this.copyEmail.bind(this));
+      }
+    }
+
+    initServiceWorker() {
+      // Регистрация Service Worker для оффлайн-работы
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then((reg) => console.log("ServiceWorker registered"))
+          .catch((err) => console.log("ServiceWorker not registered", err));
+      }
+    }
+
+    addDynamicContentHandlers() {
+      // Обработка многострочного текста
+      document.querySelectorAll("[data-multiline]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[this.currentLang]?.[key]) {
+          el.innerHTML = translations[this.currentLang][key].replace(
+            /\n/g,
+            "<br>"
+          );
+        }
+      });
+    }
+
+    copyEmail() {
+      const email = "your.email@example.com"; // Замените на реальный email
+      navigator.clipboard.writeText(email).then(() => {
+        const copiedText =
+          translations[this.currentLang]["contacts.email.copied"];
+        this.copyEmailBtn.textContent = copiedText;
+        setTimeout(() => {
+          this.copyEmailBtn.textContent =
+            translations[this.currentLang]["contacts.email.text"];
+        }, 2000);
+      });
     }
 
     setLanguage(lang) {
       this.currentLang = lang;
       localStorage.setItem("language", lang);
       document.documentElement.lang = lang;
+      document.title = translations[lang].title;
 
+      this.updateActiveButtons(lang);
+      this.translateAll();
+      this.updateMetaTags(lang);
+    }
+
+    updateActiveButtons(lang) {
       this.languageBtns.forEach((btn) => {
         btn.classList.toggle("active", btn.dataset.lang === lang);
       });
+    }
 
-      this.translateAll();
+    updateMetaTags(lang) {
+      // Обновляем мета-теги для SEO
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) {
+        metaDesc.content =
+          translations[lang].metaDescription ||
+          "Портфолио фронтенд-разработчика Ангелины Смирновой";
+      }
     }
 
     translateAll() {
       document.querySelectorAll("[data-i18n]").forEach((el) => {
         const key = el.getAttribute("data-i18n");
-        if (
-          translations[this.currentLang] &&
-          translations[this.currentLang][key]
-        ) {
-          el.textContent = translations[this.currentLang][key];
+        const translation = translations[this.currentLang]?.[key];
+
+        if (translation) {
+          // Для элементов с атрибутом data-multiline сохраняем переносы строк
+          if (el.hasAttribute("data-multiline")) {
+            el.innerHTML = translation.replace(/\n/g, "<br>");
+          }
+          // Стандартная обработка для других элементов
+          else if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.value = translation;
+          } else if (el.hasAttribute("placeholder")) {
+            el.setAttribute("placeholder", translation);
+          } else if (el.hasAttribute("alt")) {
+            el.setAttribute("alt", translation);
+          } else {
+            el.textContent = translation;
+          }
         }
       });
     }
   }
 
+  // Инициализация анимаций при загрузке
+  function initAnimations() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+      observer.observe(el);
+    });
+  }
+
+  // Запускаем все
   new LanguageSwitcher();
+  initAnimations();
+
+  // Добавляем обработчик для Easter Egg
+  const secretElement = document.querySelector(".secret-element");
+  if (secretElement) {
+    secretElement.addEventListener("click", () => {
+      window.location.href = "#easter-egg";
+    });
+  }
 });
