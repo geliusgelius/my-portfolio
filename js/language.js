@@ -34,10 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "skills.categories.tools": "Tools",
       "skills.categories.cms": "CMS Administration",
       "projects.title": "My Projects",
-      "projects.project1.title": "Restaurant Landing Page",
+      "projects.project1.title": "Mini Trello",
       "projects.project1.description":
-        "Modern responsive landing page with animations and booking form.",
-      "projects.project1.image_alt": "Restaurant landing page",
+        "A minimalistic but functional analogue of Trello.",
+      "projects.project1.image_alt": "Mini Trello",
       "projects.project2.title": "E-commerce Store",
       "projects.project2.description":
         "Full-featured store with cart and payment system.",
@@ -97,10 +97,10 @@ document.addEventListener("DOMContentLoaded", function () {
       "skills.categories.tools": "Инструменты",
       "skills.categories.cms": "Администрирование CMS",
       "projects.title": "Мои проекты",
-      "projects.project1.title": "Лендинг для ресторана",
+      "projects.project1.title": "Mini Trello",
       "projects.project1.description":
-        "Современный адаптивный лендинг с анимациями и формой бронирования.",
-      "projects.project1.image_alt": "Лендинг для ресторана",
+        "Минималистичный, но функциональный аналог Trello.",
+      "projects.project1.image_alt": "Mini Trello",
       "projects.project2.title": "Интернет-магазин",
       "projects.project2.description":
         "Полнофункциональный магазин с корзиной и платежной системой.",
