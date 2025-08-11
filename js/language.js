@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
       "projects.project1.description":
         "A minimalistic but functional analogue of Trello.",
       "projects.project1.image_alt": "Mini Trello",
-      "projects.project2.title": "E-commerce Store",
+      "projects.project2.title": "Artist's portfolio website",
       "projects.project2.description":
-        "Full-featured store with cart and payment system.",
+        "A landing page is a portfolio for an artist with an adaptive design and a gallery of works.",
       "projects.project2.image_alt": "Online store",
       "projects.tags.responsive": "Responsive design",
       "projects.links.demo": "Demo",
@@ -101,9 +101,9 @@ document.addEventListener("DOMContentLoaded", function () {
       "projects.project1.description":
         "Минималистичный, но функциональный аналог Trello.",
       "projects.project1.image_alt": "Mini Trello",
-      "projects.project2.title": "Интернет-магазин",
+      "projects.project2.title": "Сайт-портфолио художника",
       "projects.project2.description":
-        "Полнофункциональный магазин с корзиной и платежной системой.",
+        "Лендинг-портфолио для художника с адаптивным дизайном и галереей работ.",
       "projects.project2.image_alt": "Интернет-магазин",
       "projects.tags.responsive": "Адаптивная верстка",
       "projects.links.demo": "Демо",
