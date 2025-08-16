@@ -41,7 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "projects.project2.title": "Artist's portfolio website",
       "projects.project2.description":
         "A landing page is a portfolio for an artist with an adaptive design and a gallery of works.",
-      "projects.project2.image_alt": "Online store",
+      "projects.project2.image_alt": "Artist's portfolio website",
+      "projects.project3.title": "Doll Impostor Game Quiz",
+      "projects.project3.description":
+        "A web application is a quiz for the game Doll Impostor.",
+      "projects.project3.image_alt": "Doll Impostor Game Quiz",
       "projects.tags.responsive": "Responsive design",
       "projects.links.demo": "Demo",
       "projects.links.code": "Code",
@@ -104,7 +108,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "projects.project2.title": "Сайт-портфолио художника",
       "projects.project2.description":
         "Лендинг-портфолио для художника с адаптивным дизайном и галереей работ.",
-      "projects.project2.image_alt": "Интернет-магазин",
+      "projects.project2.image_alt": "Сайт-портфолио художника",
+      "projects.project3.title": "Квиз по игре Doll Impostor",
+      "projects.project3.description":
+        "Веб-приложение квиз по игре Doll Impostor.",
+      "projects.project3.image_alt": "Квиз по игре Doll Impostor",
       "projects.tags.responsive": "Адаптивная верстка",
       "projects.links.demo": "Демо",
       "projects.links.code": "Код",
